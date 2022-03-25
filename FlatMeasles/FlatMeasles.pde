@@ -1,4 +1,6 @@
 //Global Variables
+float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectRaceDisplayHeight; 
+float faceX, faceY, faceDiameter; 
 //
 //display geometry
 fullScreen (); //it is a question dont put in numbers
