@@ -3,6 +3,8 @@ int smallerDisplayDimension;
 float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectFaceDisplayHeight; 
 float faceX, faceY, faceDiameter; 
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
+float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2, mouthY2;
+
 //
 //display geometry
 fullScreen (); //it is a question dont put in numbers
@@ -41,10 +43,10 @@ rightEyeY = leftEyeY;
 rightEyeY = leftEyeY; 
 eyeDiameter = smallerDisplayDimension*1/4;
 mouthX1 = leftEyeX;
-mouthY1 = displayWidth*3/4;
+mouthY1 = displayHeight*3/4;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1; 
-
+x1, xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2, mouthY2
 
 
 //
@@ -64,10 +66,11 @@ ellipse (rightEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //
 //Nose 
 //rect();
+triangle (x1, y1, x2, y2, x3, y3);
 //
 //Mouth
 //rect();
-line (mouthX1, mouthY1, mouthX2, mouthY2); 
+line (xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2, mouthY2); 
 //Measle
 //rect();
 // 
