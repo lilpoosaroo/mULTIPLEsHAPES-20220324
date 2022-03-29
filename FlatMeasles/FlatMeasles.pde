@@ -25,28 +25,32 @@ println ("Turn your phooooooone");
 } 
 
 
-
+// rectFaceY = displayHeight*0
 //
 //variable population, defining what a variable is
 smallerDisplayDimension = displayHeight; //HEIGHT IS ALWAYS THE SMALLER DIMENSION IN LANDSCAPE MODE
 rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2); 
-rectFaceY = displayHeight*0; 
+rectFaceY = displayHeight; 
 rectFaceDisplayWidth = smallerDisplayDimension*1/2; //Square shape: needs the sname dimension
 rectFaceDisplayHeight = smallerDisplayDimension*1/2; //Sqaure shape: needs the same dimension
-faceX = displayWidth*1/4;
-faceY = displayHeight*1/4; 
+faceX = displayWidth;
+faceY = displayHeight*1/15; 
 faceDiameter = displayWidth;
 leftEyeX = displayWidth*1/4;
 rightEyeX = displayWidth*3/4; 
 leftEyeY = displayHeight*1/4;
-rightEyeY = leftEyeY; 
 rightEyeY = leftEyeY; 
 eyeDiameter = smallerDisplayDimension*1/4;
 mouthX1 = leftEyeX;
 mouthY1 = displayHeight*3/4;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1; 
-x1, xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2, mouthY2
+xNose1 = leftEyeX*5/3;
+yNose1 = leftEyeY*4/3;
+xNose2 = rightEyeX*4/3;
+yNose2= rightEyeY*2;
+xNose3 = leftEyeX*4/3;
+yNose3 = leftEyeY*2; 
 
 
 //
@@ -66,11 +70,11 @@ ellipse (rightEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //
 //Nose 
 //rect();
-triangle (x1, y1, x2, y2, x3, y3);
+triangle (xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //
 //Mouth
 //rect();
-line (xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2, mouthY2); 
+line (mouthX1, mouthY1, mouthX2, mouthY2); 
 //Measle
 //rect();
 // 
