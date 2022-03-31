@@ -25,17 +25,18 @@ println ("Turn your phooooooone");
 } 
 
 
-// rectFaceY = displayHeight*0
-//
+
+// faceX = displayWidth;
+//faceY = displayHeight*1/15; 
 //variable population, defining what a variable is
 smallerDisplayDimension = displayHeight; //HEIGHT IS ALWAYS THE SMALLER DIMENSION IN LANDSCAPE MODE
 rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2); 
-rectFaceY = displayHeight; 
-rectFaceDisplayWidth = smallerDisplayDimension*1/2; //Square shape: needs the sname dimension
-rectFaceDisplayHeight = smallerDisplayDimension*1/2; //Sqaure shape: needs the same dimension
-faceX = displayWidth;
-faceY = displayHeight*1/15; 
-faceDiameter = displayWidth;
+rectFaceY = displayHeight*0; 
+rectFaceDisplayWidth = smallerDisplayDimension; //Square shape: needs the sname dimension
+rectFaceDisplayHeight = smallerDisplayDimension; //Sqaure shape: needs the same dimension
+faceX = displayWidth*1/2;
+faceY = displayHeight*1/2; 
+faceDiameter = displayHeight;
 leftEyeX = displayWidth*1/4;
 rightEyeX = displayWidth*3/4; 
 leftEyeY = displayHeight*1/4;
