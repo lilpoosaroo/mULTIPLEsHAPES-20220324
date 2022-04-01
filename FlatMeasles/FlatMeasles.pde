@@ -37,20 +37,24 @@ rectFaceDisplayHeight = smallerDisplayDimension; //Sqaure shape: needs the same 
 faceX = displayWidth*1/2;
 faceY = displayHeight*1/2; 
 faceDiameter = displayHeight;
-leftEyeX = displayWidth*1/4;
-rightEyeX = displayWidth*3/4; 
+leftEyeX = displayWidth*3/8;
+rightEyeX = displayWidth*5/8; 
 leftEyeY = displayHeight*1/4;
 rightEyeY = leftEyeY; 
 eyeDiameter = smallerDisplayDimension*1/4;
+//
 mouthX1 = leftEyeX;
 mouthY1 = displayHeight*3/4;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1; 
-xNose1 = leftEyeX*5/3;
+//
+xNose1 = leftEyeX*4/3;
 yNose1 = leftEyeY*4/3;
-xNose2 = rightEyeX*4/3;
+
+xNose2 = rightEyeX*11/12;
 yNose2= rightEyeY*2;
-xNose3 = leftEyeX*4/3;
+
+xNose3 = leftEyeX*9/8;
 yNose3 = leftEyeY*2; 
 
 
