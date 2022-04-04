@@ -86,7 +86,13 @@ triangle (xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //rect();
 strokeWeight(mouthOpen);
 line (mouthX1, mouthY1, mouthX2, mouthY2); 
-strokeWeight();
+//strokeWeight();
 //Measle
+float measleX = displayWidth*1/2;
+float measleY = displayHeight*1/2; 
+float measleDiameter= smallerDisplayDimension*1/500;
+color pink=#F09D9D, measleColor=pink; 
 //rect();
+fill(measleColor);
+ellipse(measleX, measleY, measleDiameter, measleDiameter);
 // 
