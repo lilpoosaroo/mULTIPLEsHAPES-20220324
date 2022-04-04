@@ -32,8 +32,8 @@ println ("Turn your phooooooone");
 // faceX = displayWidth;
 //faceY = displayHeight*1/15; 
 //variable population, defining what a variable is
-reset = smallerDisplayDimension/smallerDisplayDimension;
 smallerDisplayDimension = displayHeight; //HEIGHT IS ALWAYS THE SMALLER DIMENSION IN LANDSCAPE MODE
+reset = smallerDisplayDimension/smallerDisplayDimension;
 rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2); 
 rectFaceY = displayHeight*0; 
 rectFaceDisplayWidth = smallerDisplayDimension; //Square shape: needs the sname dimension
