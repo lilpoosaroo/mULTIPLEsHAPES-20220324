@@ -8,8 +8,8 @@ float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2,
 //
 //display geometry
 fullScreen (); //it is a question dont put in numbers
-int appDisplayWidth= displayWidth, appDisplayHeight = displayHeight;
-println(appDisplayWidth, appDisplayHeight);
+//int appDisplayWidth= displayWidth, appDisplayHeight = displayHeight;
+//println(appDisplayWidth, appDisplayHeight);
 println(displayWidth, displayHeight);
 //Landscape not sqaure portrait 
 //If our width is larger than our height we are in landscape mode
@@ -56,7 +56,7 @@ mouthOpen = smallerDisplayDimension*1/4;
 xNose1 = leftEyeX*4/3;
 yNose1 = leftEyeY*4/3;
 
-xNose2 = rightEyeX*11/12;
+xNose2 = rightEyeX*13/14;
 yNose2= rightEyeY*2;
 
 xNose3 = leftEyeX*9/8;
@@ -86,13 +86,18 @@ triangle (xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //rect();
 strokeWeight(mouthOpen);
 line (mouthX1, mouthY1, mouthX2, mouthY2); 
+strokeWeight(reset);
 //strokeWeight();
 //Measle
-float measleX = displayWidth*1/2;
-float measleY = displayHeight*1/2; 
-float measleDiameter= smallerDisplayDimension*1/500;
-color pink=#F09D9D, measleColor=pink; 
+float measleDiameter= smallerDisplayDimension*1/25; //large measle=*1/25 small measle=*1/100
+float measleRadius = random(measleDiameter*1/100, measleDiameter*1/25); 
+println( measleRadius ); 
+float measleX = random( rectFaceX+measleRadius,  (rectFaceX+rectFaceDisplayWidth)-measleRadius);
+float measleY = random ( rectFaceY+measleRadius,  (rectFaceY+rectFaceDisplayHeight)-measleRadius); 
+color pink=#F09D9D, measleColor=pink, whiteReset=#000000; 
 //rect();
+noStroke(); //gets rid of the shape outline. 
 fill(measleColor);
 ellipse(measleX, measleY, measleDiameter, measleDiameter);
+stroke(whiteReset);
 // 
