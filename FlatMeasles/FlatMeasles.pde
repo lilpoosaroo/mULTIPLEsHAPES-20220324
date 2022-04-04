@@ -1,5 +1,5 @@
 //Global Variables
-int smallerDisplayDimension; 
+int reset, smallerDisplayDimension, mouthOpen; 
 float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectFaceDisplayHeight; 
 float faceX, faceY, faceDiameter; 
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
@@ -8,6 +8,8 @@ float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3, mouthX1, mouthY1, mouthX2,
 //
 //display geometry
 fullScreen (); //it is a question dont put in numbers
+int appDisplayWidth= displayWidth, appDisplayHeight = displayHeight;
+println(appDisplayWidth, appDisplayHeight);
 println(displayWidth, displayHeight);
 //Landscape not sqaure portrait 
 //If our width is larger than our height we are in landscape mode
@@ -15,6 +17,7 @@ println(displayWidth, displayHeight);
 String orientation = ( displayWidth >= displayHeight ) ? "Landscape or Square":"Portrait";
 println ("DisplayOrientation:", orientation);
 if (orientation == "Portrait") println("Turn your phooone");
+
 
 //Another type of "if" statement: 
 
@@ -29,6 +32,7 @@ println ("Turn your phooooooone");
 // faceX = displayWidth;
 //faceY = displayHeight*1/15; 
 //variable population, defining what a variable is
+reset = smallerDisplayDimension/smallerDisplayDimension;
 smallerDisplayDimension = displayHeight; //HEIGHT IS ALWAYS THE SMALLER DIMENSION IN LANDSCAPE MODE
 rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2); 
 rectFaceY = displayHeight*0; 
@@ -47,6 +51,7 @@ mouthX1 = leftEyeX;
 mouthY1 = displayHeight*3/4;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1; 
+mouthOpen = smallerDisplayDimension*1/4;
 //
 xNose1 = leftEyeX*4/3;
 yNose1 = leftEyeY*4/3;
@@ -79,7 +84,9 @@ triangle (xNose1, yNose1, xNose2, yNose2, xNose3, yNose3);
 //
 //Mouth
 //rect();
+strokeWeight(mouthOpen);
 line (mouthX1, mouthY1, mouthX2, mouthY2); 
+strokeWeight();
 //Measle
 //rect();
 // 
