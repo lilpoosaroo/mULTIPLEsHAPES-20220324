@@ -51,7 +51,7 @@ mouthX1 = leftEyeX;
 mouthY1 = displayHeight*3/4;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1; 
-mouthOpen = smallerDisplayDimension*1/4;
+mouthOpen = smallerDisplayDimension*1/8;
 //
 xNose1 = leftEyeX*4/3;
 yNose1 = leftEyeY*4/3;
