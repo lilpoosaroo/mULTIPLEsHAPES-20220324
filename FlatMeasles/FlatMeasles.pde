@@ -96,10 +96,8 @@ float measleX = random( rectFaceX+measleRadius,  (rectFaceX+rectFaceDisplayWidth
 float measleY = random ( rectFaceY+measleRadius,  (rectFaceY+rectFaceDisplayHeight)-measleRadius);
 Boolean nightMode = false; //note: IF-ELSE statement is similiar to ternary operator. 
 //color pink=#F09D9D, measleColo=pink, whiteReset=#000000; 
-color measleColor = ( nightMode == false) ? color( 255, random (0,50), random(0,80) ): night ; //ternary operator
-color measleColor = ( nightMode == true) ? : ; //ternary operator
-//
-color pink=#F09D9D, measleColor=pink, whiteReset=#000000; 
+color measleColor = ( nightMode == false) ? color( 255, random (0,50), random(0,80) ): color(255, random (0, 50), 0); //ternary operator
+color whiteReset=#000000; 
 //
 //rect();
 noStroke(); //gets rid of the shape outline. 
