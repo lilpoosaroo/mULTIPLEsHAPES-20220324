@@ -1,4 +1,20 @@
 //Global Variables
+//
+void setup (){}//end setup
+//
+void draw (){}//end draw
+//
+void keyPressed (){}//End Keypressed
+//
+void mousePressed (){}//End mousePressed
+//
+//End Main Program 
+
+
+
+
+
+//Global Variables
 int reset, smallerDisplayDimension, mouthOpen; 
 float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectFaceDisplayHeight; 
 float faceX, faceY, faceDiameter; 
