@@ -86,9 +86,9 @@ mouthX2 = rightEyeX;
 mouthY2 = mouthY1; 
 mouthOpen = smallerDisplayDimension*1/8;
 
-rectMouthX=leftEyeX+(eyeDiameter*1/2);
+rectMouthX=leftEyeX-(mouthOpen*1/2);
 rectMouthY=mouthY1-(mouthOpen*1/2);
-rectMouthDisplayWidth= mouthOpen; 
+rectMouthDisplayWidth= (mouthX2-mouthX1)+mouthOpen; 
 rectMouthDisplayHeight= smallerDisplayDimension*1/8;
 //
 xNose1 = leftEyeX*4/3;
