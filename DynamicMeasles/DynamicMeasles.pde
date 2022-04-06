@@ -12,9 +12,32 @@ float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
 float rectMouthX, rectMouthY, rectMouthDisplayWidth, rectMouthDisplayHeight;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 
-// faceX = displayWidth;
-//faceY = displayHeight*1/15; 
-//variable population, defining what a variable is
+//
+void setup ()
+{
+  
+//DISPLAY GEOMETRY: goes at the front of every setup
+fullScreen (); //it is a question dont put in numbers
+//int appDisplayWidth= displayWidth, appDisplayHeight = displayHeight;
+//println(appDisplayWidth, appDisplayHeight);
+println(displayWidth, displayHeight);
+
+//DISPLAY ORIENTATION: goes after display geometry
+//Landscape not sqaure portrait 
+//If our width is larger than our height we are in landscape mode
+//if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
+String orientation = ( displayWidth >= displayHeight ) ? "Landscape or Square":"Portrait";
+println ("DisplayOrientation:", orientation);
+if (orientation == "Portrait") println("Turn your phooone");
+//Another type of "if" statement: 
+
+if (orientation == "Landscape or Sqaure"){
+/*an empty if statement*/
+} else {
+println ("Turn your phooooooone");
+} 
+
+//variable population, defining what a variable is: ALWAYS IN VOID SETUP
 smallerDisplayDimension = displayHeight; //HEIGHT IS ALWAYS THE SMALLER DIMENSION IN LANDSCAPE MODE
 reset = smallerDisplayDimension/smallerDisplayDimension;
 rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2); 
@@ -64,30 +87,7 @@ rectNoseX= xNose2 ;
 rectNoseY= yNose1;
 rectNoseDisplayWidth= xNose3-xNose2; 
 rectNoseDisplayHeight=yNose3-yNose1;
-//
-void setup ()
-{
-  
-//DISPLAY GEOMETRY: goes at the front of every setup
-fullScreen (); //it is a question dont put in numbers
-//int appDisplayWidth= displayWidth, appDisplayHeight = displayHeight;
-//println(appDisplayWidth, appDisplayHeight);
-println(displayWidth, displayHeight);
-
-//DISPLAY ORIENTATION: goes after display geometry
-//Landscape not sqaure portrait 
-//If our width is larger than our height we are in landscape mode
-//if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
-String orientation = ( displayWidth >= displayHeight ) ? "Landscape or Square":"Portrait";
-println ("DisplayOrientation:", orientation);
-if (orientation == "Portrait") println("Turn your phooone");
-//Another type of "if" statement: 
-
-if (orientation == "Landscape or Sqaure"){
-/*an empty if statement*/
-} else {
-println ("Turn your phooooooone");
-} 
+//END OF POPULATING VARIABLES. 
 
 //Face:circle = inscribing a circle in a square.  
 //For the face: want a circle in the middle of the screen, have to know what the larger size
