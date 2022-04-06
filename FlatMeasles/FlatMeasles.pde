@@ -123,9 +123,9 @@ float measleY = random ( rectFaceY+measleRadius,  (rectFaceY+rectFaceDisplayHeig
 Boolean nightMode = false; //note: IF-ELSE statement is similiar to ternary operator. 
 //color pink=#F09D9D, measleColo=pink, whiteReset=#000000; 
 color measleColor = ( nightMode == false) ? color( 255, random (0,50), random(0,80) ): color(255, random (0, 50), 0); //ternary operator
-color whiteReset=#000000; 
+color whiteReset=#000000;
 //
-//rect();
+rect( measleX-measleDiameter*3/2+measleDiameter, measleY-measleDiameter*3/2+measleDiameter, measleDiameter, measleDiameter);
 noStroke(); //gets rid of the shape outline. 
 fill(measleColor);
 ellipse(measleX, measleY, measleDiameter, measleDiameter);
