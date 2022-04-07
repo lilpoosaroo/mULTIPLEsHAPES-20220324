@@ -1,3 +1,22 @@
+
+/*
+leftEyeX = displayWidth*3/8;
+rightEyeX = displayWidth*5/8; 
+leftEyeY = displayHeight*1/2;
+rightEyeY = leftEyeY; 
+eyeDiameter = smallerDisplayDimension*1/16;
+rectLeftEyeX= leftEyeX-(eyeDiameter*1/2); 
+rectLeftEyeY= displayHeight*1/8;  
+rectEyeDisplayWidth= smallerDisplayDimension*1/4;
+rectEyeDisplayHeight= smallerDisplayDimension*1/4;
+rectRightEyeX= rightEyeX-(eyeDiameter*1/2); 
+rectRightEyeY= displayHeight*1/8;  
+*/
+
+
+
+
+
 void eyes ()
 {
 //Left Eye

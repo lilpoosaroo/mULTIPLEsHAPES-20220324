@@ -1,5 +1,7 @@
 void measle ()
+
 {
+
 //Measle
 float measleDiameter= smallerDisplayDimension*1/25; //large measle=*1/25 small measle=*1/100
 float measleRadius = random(measleDiameter*1/100, measleDiameter*1/25); 
@@ -14,4 +16,4 @@ noStroke(); //gets rid of the shape outline.
 fill(measleColor);
 ellipse(measleX, measleY, measleDiameter, measleDiameter);
 stroke(white);
-}//End measle code
+}//End measle code 
