@@ -83,8 +83,8 @@ leftYBlush1b= leftEyeY+(eyeDiameter*5/8);
 
 leftXBlush2a= (eyeDiameter*1/4)+leftXBlush1a;
 leftYBlush2a=leftYBlush1a;
-leftXBlush2b= leftXBlush1b;
-leftYBlush2b=leftEyeY;
+leftXBlush2b= (eyeDiameter*1/4)+leftXBlush1b;
+leftYBlush2b=leftEyeY+(eyeDiameter*5/8);
 
 leftXBlush3a= (eyeDiameter*1/4)+leftXBlush2a; 
 leftYBlush3a=leftYBlush1a;
