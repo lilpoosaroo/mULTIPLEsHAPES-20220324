@@ -1,4 +1,4 @@
-//Global Variables
+//Global Variables, variable that runs in the ain program and all the sub programs
 int reset, smallerDisplayDimension, mouthOpen; 
 float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectFaceDisplayHeight; 
 float faceX, faceY, faceDiameter; 
