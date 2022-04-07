@@ -13,6 +13,8 @@ float rectMouthX, rectMouthY, rectMouthDisplayWidth, rectMouthDisplayHeight;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 
 float leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b; 
+float leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b;
+float leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b;
 
 //
 void setup ()
@@ -75,10 +77,19 @@ rectNoseDisplayHeight=yNose3-yNose1;
 //
 //Blush
 leftXBlush1a= leftEyeX-(eyeDiameter*1/2);
+leftYBlush1a=leftEyeY+(eyeDiameter);
 leftXBlush1b=leftEyeX-(eyeDiameter*1/4);
 leftYBlush1b= leftEyeY+(eyeDiameter*5/8);
-leftYBlush1a=leftEyeY+(eyeDiameter);
 
+leftXBlush2a= (eyeDiameter*1/4)+leftXBlush1a;
+leftYBlush2a=leftYBlush1a;
+leftXBlush2b= leftXBlush1b;
+leftYBlush2b=leftEyeY;
+
+leftXBlush3a= (eyeDiameter*1/4)+leftXBlush2a; 
+leftYBlush3a=leftYBlush1a;
+leftXBlush3b=(eyeDiameter*1/4)+leftXBlush2b;
+leftYBlush3b=leftYBlush1b;
 
 //END OF POPULATING VARIABLES. 
 //
@@ -101,8 +112,8 @@ mouth ();
 //leftEyeBlush2=;
 //leftEyeBlush3=;
 line(leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b);
-//line();
-//line();
+line(leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b);
+line(leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b);
 //
 //line();
 //line();
