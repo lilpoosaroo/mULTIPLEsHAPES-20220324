@@ -15,6 +15,9 @@ float mouthX1, mouthY1, mouthX2, mouthY2;
 float leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b; 
 float leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b;
 float leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b;
+float rightBlush1XA, rightBlush1YA, rightBlush1XB, rightBlush1YB;
+float rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB;
+float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 
 //
 void setup ()
@@ -81,15 +84,33 @@ leftYBlush1a=leftEyeY+(eyeDiameter);
 leftXBlush1b=leftEyeX-(eyeDiameter*1/4);
 leftYBlush1b= leftEyeY+(eyeDiameter*5/8);
 
-leftXBlush2a= (eyeDiameter*1/4)+leftXBlush1a;
-leftYBlush2a=leftYBlush1a;
-leftXBlush2b= (eyeDiameter*1/4)+leftXBlush1b;
-leftYBlush2b=leftEyeY+(eyeDiameter*5/8);
+leftXBlush2a=    (eyeDiameter*1/4)+leftXBlush1a;
+leftYBlush2a=     leftYBlush1a;
+leftXBlush2b=     (eyeDiameter*1/4)+leftXBlush1b;
+leftYBlush2b=      leftEyeY+(eyeDiameter*5/8);
 
-leftXBlush3a= (eyeDiameter*1/4)+leftXBlush2a; 
-leftYBlush3a=leftYBlush1a;
-leftXBlush3b=(eyeDiameter*1/4)+leftXBlush2b;
-leftYBlush3b=leftYBlush1b;
+leftXBlush3a=      (eyeDiameter*1/4)+leftXBlush2a; 
+leftYBlush3a=     leftYBlush1a;
+leftXBlush3b=    (eyeDiameter*1/4)+leftXBlush2b;
+leftYBlush3b=    leftYBlush1b;
+
+
+rightBlush2XA=rightEyeX+(eyeDiameter*1/4);
+rightBlush2YA= leftYBlush1a;
+rightBlush2XB=rightEyeX;
+rightBlush2YB=leftYBlush1b;
+
+rightBlush1XA=rightBlush2XB;
+rightBlush1YA=leftYBlush1a;
+rightBlush1XB= rightEyeX-(eyeDiameter*1/4);
+rightBlush1YB=leftYBlush1b;
+
+rightBlush3XA=rightEyeX+(eyeDiameter*1/2);
+rightBlush3YA= rightBlush2YA;
+rightBlush3XB= rightBlush2XA;
+rightBlush3YB= rightBlush1YB;
+
+
 
 //END OF POPULATING VARIABLES. 
 //
@@ -114,10 +135,13 @@ mouth ();
 line(leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b);
 line(leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b);
 line(leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b);
+
+line(rightBlush1XA, rightBlush1YA, rightBlush1XB, rightBlush1YB);
+line(rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB);
+line(rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB);
+
 //
-//line();
-//line();
-//line();
+
 
 
 measle ();
