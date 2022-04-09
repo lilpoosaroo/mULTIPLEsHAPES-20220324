@@ -6,6 +6,7 @@ float faceX, faceY, faceDiameter;
 int boldLine;
 color tomatoRed=#EA1C1C;
 color white=#FFFFFF;
+color black=#000000;
 float rectLeftEyeX, rectLeftEyeY, rectRightEyeX, rectRightEyeY, rectEyeDisplayWidth, rectEyeDisplayHeight;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
 float leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2;
@@ -35,7 +36,7 @@ float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4A
 float circle1BX, circle1BY;
 float circle1CX, circle1CY;
 
-String title = "I love you from my head to-ma-toes";
+String title = "      I love you from my       head to-ma-toes";
 PFont titleFont;
 color green=#82F75C;
 //
@@ -100,18 +101,18 @@ void setup ()
   mouthX = faceX;
   mouthY = faceY*105/100;
   mouthOpen = smallerDisplayDimension*1/8;
-  
+
   smileX1=mouthX-(eyeDiameter*1/4); 
   smileY1=mouthY; 
   smileX2=mouthX+(eyeDiameter*1/4);
   smileY2=smileY1;
-  
+
   smileX3=mouthX*97/100;
-  smileY3=mouthY-(eyeDiameter*1/8); 
+  smileY3=mouthY-(eyeDiameter*1/5); 
   smileX4=mouthX*103/100;
   smileY4=smileY3;
-   
-   
+
+
   rectMouthX=leftEyeX-(mouthOpen*1/2);
   rectMouthY=mouthY-(mouthOpen*1/2);
   rectMouthDisplayWidth= (mouthX)+mouthOpen; 
@@ -177,7 +178,7 @@ void setup ()
   circle3AY=rectApronY+rectApronHeight;
   circle4AX=rectApronX+rectApronWidth;
   circle4AY=rectApronY;
-   titleFont = createFont("Segoe Script Bold", 35);
+  titleFont = createFont("Segoe Script Bold", 35);
   circle1BX=rectApronX;
   circle1BY=rectApronY+(rectApronHeight*1/3);
   circle1CX=rectApronX;
@@ -189,16 +190,7 @@ void setup ()
   //END OF POPULATING VARIABLES. 
   //
   face ();
-  //
-  String[] fontList = PFont.list(); //To list all fonts available on OS
-  printArray(fontList); //For listing all possible fonts to choose from, then createFont
-}//END setup
-//
-void draw ()
-{
-  //
-  
-  //
+  mouth ();
   eyes ();
   line(leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2);
   line(rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2);
@@ -206,21 +198,12 @@ void draw ()
   strokeWeight(boldLine);
   line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
   line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
-
-
-  //
-  //nose();
-  //
- 
-   mouth ();
-   strokeWeight(mouthOpen*1/50);
-   fill(white);
-  //
   //Blush
   //leftEyeBlush3=;
   //leftEyeBlush1=;
   //leftEyeBlush2=;
   //leftEyeBlush3=;
+  strokeWeight(mouthOpen*1/23);
   line(leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b);
   line(leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b);
   line(leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b);
@@ -228,7 +211,7 @@ void draw ()
   line(rightBlush1XA, rightBlush1YA, rightBlush1XB, rightBlush1YB);
   line(rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB);
   line(rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB);
-
+  strokeWeight(reset);
   //APRON
   noStroke();
   rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
@@ -240,11 +223,19 @@ void draw ()
   ellipse(circle1CX, circle1CY, rectApronWidth*1/8, rectApronWidth*1/8);
   fill(green); 
   textAlign(CENTER, CENTER); 
-  textFont(titleFont, 23); //Change the number until it fits
+  textFont(titleFont, 30); //Change the number until it fits
   text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   //
+  //
+  String[] fontList = PFont.list(); //To list all fonts available on OS
+  printArray(fontList); //For listing all possible fonts to choose from, then createFont
+}//END setup
+//
+void draw ()
+{
+ 
 
-  
+
 
   //measle ();
   //

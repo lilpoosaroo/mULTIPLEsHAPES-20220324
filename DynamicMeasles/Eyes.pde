@@ -21,8 +21,8 @@ void eyes ()
 {
 //Left Eye
 //rect(rectLeftEyeX, rectLeftEyeY, rectEyeDisplayWidth, rectEyeDisplayHeight);
-color black=#000000, white=#FFFFFF;;
 stroke(black);
+strokeWeight(mouthOpen*1/18);
 fill(white);
 ellipse (leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //
@@ -30,5 +30,5 @@ ellipse (leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
 //rect(rectRightEyeX, rectRightEyeY, rectEyeDisplayWidth, rectEyeDisplayHeight);
 
 ellipse (rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
-//
+strokeWeight(reset);
 }//End eye code
