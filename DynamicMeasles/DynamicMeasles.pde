@@ -38,7 +38,7 @@ float circle1CX, circle1CY;
 
 String title = "  I love you from my     head to-ma-toes";
 PFont titleFont;
-color green=#82F75C;
+color green=#165A00;
 //
 void setup ()
 {
@@ -178,7 +178,7 @@ void setup ()
   circle3AY=rectApronY+rectApronHeight;
   circle4AX=rectApronX+rectApronWidth;
   circle4AY=rectApronY;
-  titleFont = createFont("Segoe Script Bold", 35);
+  titleFont = createFont("Calibri Bold Italic", 80);
   circle1BX=rectApronX;
   circle1BY=rectApronY+(rectApronHeight*1/3);
   circle1CX=rectApronX;
