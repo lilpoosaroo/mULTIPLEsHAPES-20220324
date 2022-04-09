@@ -34,7 +34,7 @@ float circle1BX, circle1BY;
 
 String title = "I love you from my head to-ma-toes";
 PFont titleFont;
-color purple=#2C08FF, resetDefaultInk=#FFFFFF;
+color green=#82F75C;
 //
 void setup ()
 {
@@ -83,15 +83,15 @@ void setup ()
   firstboldLineX2=leftEyeX*105/100;
   firstboldLineY2=leftEyeY;
 
- 
+
   secondboldLineX1=rightEyeX*203/200;
   secondboldLineY1=firstboldLineY1;
   secondboldLineX2=rightEyeX*195/200;
   secondboldLineY2=firstboldLineY2;
-  
+
 
   boldLine=smallerDisplayDimension*1/27;
- 
+
 
   //
   mouthX = faceX;
@@ -148,9 +148,9 @@ void setup ()
   rightBlush3YA= rightBlush2YA;
   rightBlush3XB= rightBlush2XA;
   rightBlush3YB= rightBlush1YB;
-  
+
   //APRON
-  
+
   rectApronX=leftEyeX;
   rectApronY=leftEyeY+(eyeDiameter*3); 
   rectApronWidth=rightEyeX-leftEyeX;
@@ -163,10 +163,10 @@ void setup ()
   circle3AY=rectApronY+rectApronHeight;
   circle4AX=rectApronX+rectApronWidth;
   circle4AY=rectApronY;
-  
-  circle1BX=;
-  circle1BY=;
-  
+   titleFont = createFont("Segoe Script Bold", 35);
+ // circle1BX=;
+ // circle1BY=;
+
 
 
 
@@ -174,6 +174,8 @@ void setup ()
   //
   face ();
   //
+  String[] fontList = PFont.list(); //To list all fonts available on OS
+  printArray(fontList); //For listing all possible fonts to choose from, then createFont
 }//END setup
 //
 void draw ()
@@ -182,12 +184,12 @@ void draw ()
   eyes ();
   line(leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2);
   line(rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2);
-  
-   strokeWeight(boldLine);
-   line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
-   line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
-   
-   
+
+  strokeWeight(boldLine);
+  line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
+  line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
+
+
   //
   //nose();
   //
@@ -206,14 +208,18 @@ void draw ()
   line(rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB);
   line(rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB);
 
-//APRON
-noStroke();
-rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
-ellipse(circle1AX, circle1AY, ApronWidth*1/4, ApronWidth*1/4);
-ellipse(circle2AX, circle2AY, ApronWidth*1/4, ApronWidth*1/4);
-ellipse(circle3AX, circle3AY, eyeDiameter*2/3, eyeDiameter*2/3; 
-ellipse(circle4AX, circle4AY, eyeDiameter*2/3, eyeDiameter*2/3);
-ellipse(circle1BX, circle1BY, eyeDiameter*2/3, eyeDiameter*2/3);
+  //APRON
+  noStroke();
+  rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
+  ellipse(circle1AX, circle1AY, rectApronWidth*1/6, rectApronWidth*1/6);
+  ellipse(circle2AX, circle2AY, rectApronWidth*1/6, rectApronWidth*1/6);
+  ellipse(circle3AX, circle3AY, rectApronWidth*1/6, rectApronWidth*1/6); 
+  ellipse(circle4AX, circle4AY, rectApronWidth*1/6, rectApronWidth*1/6);
+  //ellipse(circle1BX, circle1BY, rectApronWidth*1/6, rectApronWidth*1/6);
+  fill(green); 
+  textAlign(CENTER, CENTER); 
+  textFont(titleFont, 23); //Change the number until it fits
+  text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   //
 
 
@@ -230,28 +236,3 @@ void mousePressed () {
 }//End mousePressed
 //
 //End Main Program 
-
-
-//
-//Display Geometry, Display orientation: landscape, portrait, or square
-size (500, 600); //fullScreen(); //displayWidth & displayHeight
-//Population
-titleX = width*1/5;
-titleY = height*1/10;
-titleWidth = width*3/5; //Rect ends at 4/5's of width
-titleHeight = height*1/10; //Rect ends at 2/10's of height
-//
-//Fonts from OS (Operating System)
-// String[] fontList = PFont.list(); //To list all fonts available on OS
-//printArray(fontList); //For listing all possible fonts to choose from, then createFont
-titleFont = createFont("Harrington", 55); //Verify the font exists in Processing.Java
-// Tools / Create Font / Find Font / Do not press "OK", known bug
-//
-//Layout our text space and typographical features
-rect(titleX, titleY, titleWidth, titleHeight);
-//Drawing Text
-fill(purple); //Ink, hexidecimal copied from Color Selector
-textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-//Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-textFont(titleFont, 50); //Change the number until it fits
-text(title, titleX, titleY, titleWidth, titleHeight);

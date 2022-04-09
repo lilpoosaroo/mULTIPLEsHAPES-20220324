@@ -14,6 +14,8 @@ float mouthX1, mouthY1, mouthX2, mouthY2;
 
 //
 //display geometry
+ String[] fontList = PFont.list(); //To list all fonts available on OS
+printArray(fontList); //For listing all possible fonts to choose from, then createFont
 fullScreen (); //it is a question dont put in numbers
 //int appDisplayWidth= displayWidth, appDisplayHeight = displayHeight;
 //println(appDisplayWidth, appDisplayHeight);
