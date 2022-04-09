@@ -33,16 +33,17 @@ float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 
 float rectApronX, rectApronY, rectApronWidth, rectApronHeight;
 PImage Pic1;
-int Pic1Width=1400;
-int Pic1Height=1000;
-int Pic1WidthAdjusted=;
-int Pic1HeightAdjusted=;
+int Pic1Width=960;
+int Pic1Height=640;
+//int Pic1WidthAdjusted=;
+//int Pic1HeightAdjusted=;
 int largerPic1Dimension, smallerPic1Dimension;
 Boolean widthPic1Larger= false, heightPic1Larger=false;
+color italianFlagGreen=#2F9739; 
+color italianFlagRed= #D63A31;
 float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4AX, circle4AY;
 float circle1BX, circle1BY;
 float circle1CX, circle1CY;
-
 String title = "  I love you from my     head to-ma-toes";
 PFont titleFont;
 color green=#165A00;
@@ -177,16 +178,16 @@ void setup ()
   rectApronY=leftEyeY+(eyeDiameter*3); 
   rectApronWidth=rightEyeX-leftEyeX;
   rectApronHeight= smallerDisplayDimension*1/6;
-  Pic1 = loadImage("Italian Flag - 1400 x1000.jpg");
-  if (Pic1Width > Pic1Height){
-largerPic1Dimension=Pic1Width;
-smallerPic1Dimension=Pic1Height;
-widthPic1Larger=true;
-} else {
-largerPic1Dimension=Pic1Height;
-smallerPic1Dimension=Pic1Width;
-heightPic1Larger=true;
-}
+  Pic1 = loadImage("italy's flag - 960x640.png");
+  if (Pic1Width > Pic1Height) {
+    largerPic1Dimension=Pic1Width;
+    smallerPic1Dimension=Pic1Height;
+    widthPic1Larger=true;
+  } else {
+    largerPic1Dimension=Pic1Height;
+    smallerPic1Dimension=Pic1Width;
+    heightPic1Larger=true;
+  }
   circle1AX=rectApronX;
   circle1AY=rectApronY;
   circle2AX=rectApronX;
@@ -233,25 +234,28 @@ heightPic1Larger=true;
   noStroke();
   rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   image(Pic1, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
+  fill(italianFlagGreen);
   ellipse(circle1AX, circle1AY, rectApronWidth*1/8, rectApronWidth*1/8);
-  ellipse(circle2AX, circle2AY, rectApronWidth*1/8, rectApronWidth*1/8);
-  ellipse(circle3AX, circle3AY, rectApronWidth*1/8, rectApronWidth*1/8); 
-  ellipse(circle4AX, circle4AY, rectApronWidth*1/8, rectApronWidth*1/8);
   ellipse(circle1BX, circle1BY, rectApronWidth*1/8, rectApronWidth*1/8);
   ellipse(circle1CX, circle1CY, rectApronWidth*1/8, rectApronWidth*1/8); 
+  ellipse(circle2AX, circle2AY, rectApronWidth*1/8, rectApronWidth*1/8);
+  fill(italianFlagRed);
+  ellipse(circle3AX, circle3AY, rectApronWidth*1/8, rectApronWidth*1/8); 
+  ellipse(circle4AX, circle4AY, rectApronWidth*1/8, rectApronWidth*1/8);
+ 
   fill(green); 
   textAlign(CENTER, CENTER); 
   textFont(titleFont, 30); //Change the number until it fits
   text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   //
-  //
+  //ellipse
   String[] fontList = PFont.list(); //To list all fonts available on OS
   printArray(fontList); //For listing all possible fonts to choose from, then createFont
 }//END setup
 //
 void draw ()
 {
- 
+
   leaves();
   //
 }//end draw
