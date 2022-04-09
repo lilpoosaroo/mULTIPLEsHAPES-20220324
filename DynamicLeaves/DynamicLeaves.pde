@@ -32,6 +32,7 @@ float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 
 
 float rectApronX, rectApronY, rectApronWidth, rectApronHeight;
+PImage Pic1;
 float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4AX, circle4AY;
 float circle1BX, circle1BY;
 float circle1CX, circle1CY;
@@ -170,6 +171,7 @@ void setup ()
   rectApronY=leftEyeY+(eyeDiameter*3); 
   rectApronWidth=rightEyeX-leftEyeX;
   rectApronHeight= smallerDisplayDimension*1/6;
+  Pic1 = loadImage("");
   circle1AX=rectApronX;
   circle1AY=rectApronY;
   circle2AX=rectApronX;
@@ -234,10 +236,7 @@ void setup ()
 void draw ()
 {
  
-
-
-
-  //measle ();
+  leaves();
   //
 }//end draw
 
