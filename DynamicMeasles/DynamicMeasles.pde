@@ -19,6 +19,8 @@ float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
 
 float rectMouthX, rectMouthY, rectMouthDisplayWidth, rectMouthDisplayHeight;
 float mouthX, mouthY;
+float smileX1, smileY1, smileX2, smileY2;
+float smileX3, smileY3, smileX4, smileY4;
 
 float leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b; 
 float leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b;
@@ -31,6 +33,7 @@ float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 float rectApronX, rectApronY, rectApronWidth, rectApronHeight;
 float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4AX, circle4AY;
 float circle1BX, circle1BY;
+float circle1CX, circle1CY;
 
 String title = "I love you from my head to-ma-toes";
 PFont titleFont;
@@ -97,7 +100,18 @@ void setup ()
   mouthX = faceX;
   mouthY = faceY*105/100;
   mouthOpen = smallerDisplayDimension*1/8;
-
+  
+  smileX1=mouthX-(eyeDiameter*1/4); 
+  smileY1=mouthY; 
+  smileX2=mouthX+(eyeDiameter*1/4);
+  smileY2=smileY1;
+  
+  smileX3=mouthX*97/100;
+  smileY3=mouthY-(eyeDiameter*1/8); 
+  smileX4=mouthX*103/100;
+  smileY4=smileY3;
+   
+   
   rectMouthX=leftEyeX-(mouthOpen*1/2);
   rectMouthY=mouthY-(mouthOpen*1/2);
   rectMouthDisplayWidth= (mouthX)+mouthOpen; 
@@ -164,8 +178,10 @@ void setup ()
   circle4AX=rectApronX+rectApronWidth;
   circle4AY=rectApronY;
    titleFont = createFont("Segoe Script Bold", 35);
- // circle1BX=;
- // circle1BY=;
+  circle1BX=rectApronX;
+  circle1BY=rectApronY+(rectApronHeight*1/3);
+  circle1CX=rectApronX;
+  circle1CY=circle1BY+(rectApronHeight*1/3);
 
 
 
@@ -181,6 +197,8 @@ void setup ()
 void draw ()
 {
   //
+  
+  //
   eyes ();
   line(leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2);
   line(rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2);
@@ -193,7 +211,10 @@ void draw ()
   //
   //nose();
   //
-  mouth ();
+ 
+   mouth ();
+   strokeWeight(mouthOpen*1/50);
+   fill(white);
   //
   //Blush
   //leftEyeBlush3=;
@@ -211,18 +232,19 @@ void draw ()
   //APRON
   noStroke();
   rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
-  ellipse(circle1AX, circle1AY, rectApronWidth*1/6, rectApronWidth*1/6);
-  ellipse(circle2AX, circle2AY, rectApronWidth*1/6, rectApronWidth*1/6);
-  ellipse(circle3AX, circle3AY, rectApronWidth*1/6, rectApronWidth*1/6); 
-  ellipse(circle4AX, circle4AY, rectApronWidth*1/6, rectApronWidth*1/6);
-  //ellipse(circle1BX, circle1BY, rectApronWidth*1/6, rectApronWidth*1/6);
+  ellipse(circle1AX, circle1AY, rectApronWidth*1/8, rectApronWidth*1/8);
+  ellipse(circle2AX, circle2AY, rectApronWidth*1/8, rectApronWidth*1/8);
+  ellipse(circle3AX, circle3AY, rectApronWidth*1/8, rectApronWidth*1/8); 
+  ellipse(circle4AX, circle4AY, rectApronWidth*1/8, rectApronWidth*1/8);
+  ellipse(circle1BX, circle1BY, rectApronWidth*1/8, rectApronWidth*1/8);
+  ellipse(circle1CX, circle1CY, rectApronWidth*1/8, rectApronWidth*1/8);
   fill(green); 
   textAlign(CENTER, CENTER); 
   textFont(titleFont, 23); //Change the number until it fits
   text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   //
 
-
+  
 
   //measle ();
   //
