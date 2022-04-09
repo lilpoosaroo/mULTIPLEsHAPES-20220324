@@ -36,7 +36,7 @@ float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4A
 float circle1BX, circle1BY;
 float circle1CX, circle1CY;
 
-String title = "      I love you from my       head to-ma-toes";
+String title = "  I love you from my     head to-ma-toes";
 PFont titleFont;
 color green=#82F75C;
 //
