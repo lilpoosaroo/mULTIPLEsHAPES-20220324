@@ -28,8 +28,9 @@ float rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB;
 float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 
 
-float rectapronX, rectapronY, rectapronWidth, rectapronHeight;
-float circle1AX, circle1AY, circle2A, circle1AY,
+float rectApronX, rectApronY, rectApronWidth, rectApronHeight;
+float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4AX, circle4AY;
+float circle1BX, circle1BY;
 //
 void setup ()
 {
@@ -146,10 +147,21 @@ void setup ()
   
   //APRON
   
-  rectapronX=leftEyeX;
-  rectapronY=leftEyeY+(eyeDiameter*3); 
-  rectapronWidth=rightEyeX-leftEyeX;
-  rectapronHeight= smallerDisplayDimension*1/6;
+  rectApronX=leftEyeX;
+  rectApronY=leftEyeY+(eyeDiameter*3); 
+  rectApronWidth=rightEyeX-leftEyeX;
+  rectApronHeight= smallerDisplayDimension*1/6;
+  circle1AX=rectApronX;
+  circle1AY=rectApronY;
+  circle2AX=rectApronX;
+  circle2AY=rectApronY+rectApronHeight; 
+  circle3AX=rectApronX+rectApronWidth;
+  circle3AY=rectApronY+rectApronHeight;
+  circle4AX=rectApronX+rectApronWidth;
+  circle4AY=rectApronY;
+  
+  circle1BX=;
+  circle1BY=;
   
 
 
@@ -192,11 +204,12 @@ void draw ()
 
 //APRON
 noStroke();
-rect(rectapronX, rectapronY, rectapronWidth, rectapronHeight);
-ellipse(rectapronX, rectapronY, eyeDiameter, eyeDiameter);
-ellipse(eyeDiameter, eyeDiameter);
-ellipse(eyeDiameter, eyeDiameter); 
-ellipse(eyeDiameter, eyeDiameter);
+rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
+ellipse(circle1AX, circle1AY, ApronWidth*1/4, ApronWidth*1/4);
+ellipse(circle2AX, circle2AY, ApronWidth*1/4, ApronWidth*1/4);
+ellipse(circle3AX, circle3AY, eyeDiameter*2/3, eyeDiameter*2/3; 
+ellipse(circle4AX, circle4AY, eyeDiameter*2/3, eyeDiameter*2/3);
+ellipse(circle1BX, circle1BY, eyeDiameter*2/3, eyeDiameter*2/3);
   //
 
 
