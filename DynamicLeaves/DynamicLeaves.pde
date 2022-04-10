@@ -39,10 +39,11 @@ int Pic1Height=640;
 //int Pic1HeightAdjusted=;
 int largerPic1Dimension, smallerPic1Dimension;
 Boolean widthPic1Larger= false, heightPic1Larger=false;
+
 //APRON strings
 float stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight;
 float  stringMidX, stringMidY, stringMidWidth, stringMidHeight; 
-//float stringRightX, stringRightY, stringRightWidth, stringRightHeight;
+float stringRightX, stringRightY, stringRightWidth, stringRightHeight;
 //APRON border
 color italianFlagGreen=#2F9739; 
 color italianFlagRed= #D63A31;
@@ -53,7 +54,7 @@ float circle2DX, circle2DY, circle2EX, circle2EY, circle2FX, circle2FY;
 float circle2GX, circle2GY, circle2HX, circle2HY;
 float circle3AX, circle3AY, circle3BX, circle3BY, circle3CX, circle3CY;
 float circle4AX, circle4AY;
-String title = "  I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes";
+String title = " I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes";
 PFont titleFont;
 color green=#266C0F;
 //
@@ -198,10 +199,10 @@ void setup ()
     heightPic1Larger=true;
   }
   titleFont = createFont("Calibri Bold Italic", 80);
- 
-  
+
+
   //APRON lining
-  
+
   circleApronDiameter=rectApronWidth*1/8;
   circle1AX=rectApronX;
   circle1AY=rectApronY;
@@ -209,15 +210,15 @@ void setup ()
   circle1BY=rectApronY+(rectApronHeight*1/3);
   circle1CX=rectApronX;
   circle1CY=circle1BY+(rectApronHeight*1/3);
-  
+
   circle2AX=rectApronX;
   circle2AY=rectApronY+rectApronHeight;
-  
+
   circle2BX=circle2AX+circleApronDiameter;
   circle2BY=circle2AY;
   circle2CX=circle2BX+circleApronDiameter;
   circle2CY=circle2AY;
-  
+
   circle2DX=circle2CX+circleApronDiameter;
   circle2DY=circle2AY;
   circle2EX=circle2DX+circleApronDiameter;
@@ -226,31 +227,45 @@ void setup ()
   circle2FY=circle2AY;
   circle2GX=circle2FX+circleApronDiameter;
   circle2GY=circle2AY;
-  circle2HX= circle2GX+circleApronDiameter;;
+  circle2HX= circle2GX+circleApronDiameter;
+  ;
   circle2HY=circle2AY;
-  
-  
+
+
   circle3AX=rectApronX+rectApronWidth;
   circle3AY=rectApronY+rectApronHeight;
   circle3BX=circle3AX;
   circle3BY=circle3AY-circleApronDiameter;
   circle3CX=circle3AX;
   circle3CY=circle3BY-circleApronDiameter;
-  
+
   circle4AX=rectApronX+rectApronWidth;
   circle4AY=rectApronY;
-  
+
   //APRON strings
   stringLeftX=rectFaceX+(circleApronDiameter*1/2);
   stringLeftY=circle1AY-(circleApronDiameter*1/2);
-  stringLeftWidth=(rectApronWidth*5/6)+(circleApronDiameter*1/2);
+  coverENDLeftStringX1=displayWidth*30/100;
+  coverENDLeftStringY1=;
+  coverENDLeftStringX2=;
+  coverENDLeftStringY2=stringLeftY-(circleApronDiameter*1/2);
+  stringLeftWidth=(rectApronWidth*5/6)+(circleApronDiameter*4/5);
   stringLeftHeight=circleApronDiameter*1/2;
-  
+
   stringMidX=smileX1-(circleApronDiameter*107/100);
-  stringMidY=circle1AY-(circleApronDiameter*1/2);
+  stringMidY=stringLeftY;
   stringMidWidth=(rectApronWidth*1/3);
-  stringMidHeight=circleApronDiameter*1/2;
- 
+  stringMidHeight=stringLeftHeight;
+
+  stringRightX=stringMidX+(rectApronWidth*1/3);
+  stringRightY=stringLeftY;
+  coverENDRightStringX1=displayWidth*79/100;
+  coverENDRightStringY1=coverENDLeftStringY1;
+  coverENDRightStringX2=;
+  coverENDRightStringY2=coverENDLeftStringY2;
+  stringRightWidth=stringLeftWidth;
+  stringRightHeight=stringLeftHeight;
+
 
 
 
@@ -285,9 +300,9 @@ void setup ()
   noStroke();
   rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   image(Pic1, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
-  
+
   fill(black); 
-  textAlign(CENTER, CENTER); 
+  textAlign(CENTER, TOP); 
   textFont(titleFont, 10); //Change the number until it fits
   text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   fill(italianFlagGreen);
@@ -306,12 +321,13 @@ void setup ()
   ellipse(circle2GX, circle2GY, circleApronDiameter, circleApronDiameter);
   ellipse(circle2HX, circle2HY, circleApronDiameter, circleApronDiameter);
   fill(italianFlagRed);
+  rect(stringRightX, stringRightY, stringRightWidth, stringRightHeight);
   ellipse(circle3AX, circle3AY, circleApronDiameter, circleApronDiameter); 
   ellipse(circle3BX, circle3BY, circleApronDiameter, circleApronDiameter);
   ellipse(circle3CX, circle3CY, circleApronDiameter, circleApronDiameter);
   ellipse(circle4AX, circle4AY, circleApronDiameter, circleApronDiameter);
 
- 
+
   //
   //ellipse
   String[] fontList = PFont.list(); //To list all fonts available on OS
