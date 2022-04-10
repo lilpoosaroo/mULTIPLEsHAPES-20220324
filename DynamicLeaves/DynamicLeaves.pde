@@ -1,8 +1,5 @@
 //Global Variables, variable that runs in the ain program and all the sub programs
 int reset, smallerDisplayDimension, mouthOpen; 
-float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectFaceDisplayHeight; 
-float faceX, faceY, faceDiameter; 
-
 int boldLine;
 color tomatoRed=#EA1C1C;
 color white=#FFFFFF;
@@ -15,26 +12,19 @@ void setup ()
   fullScreen (); //it is a question dont put in numbers
   //
   DisplayGeometryDisplayOrientation ();
+  DeterminingLargerDimension();
   //
   population();
 
-  //END OF POPULATING VARIABLES. 
-  //
-  face ();
-  mouth ();
-  eyes ();
-  blush();
-  Apron();
-  //APRON
   
-  stroke(black);
-  strokeWeight(mouthOpen*1/5);
-  line(lilhandLeftX1, lilhandLeftY1, lilhandLeftX2, lilhandLeftY2);
-  strokeWeight(mouthOpen*1/5);
-  line(lilhandRightX1, lilhandRightY1, lilhandRightX2, lilhandRightY2);
-  strokeWeight(reset);
-  noStroke();
-
+  Face ();
+  Mouth ();
+  Eyes ();
+  Blush();
+  Apron();
+  Hands();
+  
+  
 
 
   //String[] fontList = PFont.list(); //To list all fonts available on OS
@@ -44,7 +34,7 @@ void setup ()
 void draw ()
 {
 
-  leaves();
+  Leaves();
   //
 }//end draw
 

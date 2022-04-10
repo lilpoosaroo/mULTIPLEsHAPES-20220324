@@ -7,7 +7,7 @@ float rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB;
 float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 //
 
-void blush ()
+void Blush ()
 {
   strokeWeight(mouthOpen*1/23);
   line(leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b);

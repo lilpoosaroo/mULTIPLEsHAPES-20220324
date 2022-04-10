@@ -1,6 +1,6 @@
 void population ()
 {
- //variable population, defining what a variable is: ALWAYS IN VOID SETUP
+  //variable population, defining what a variable is: ALWAYS IN VOID SETUP
   smallerDisplayDimension = displayHeight; //HEIGHT IS ALWAYS THE SMALLER DIMENSION IN LANDSCAPE MODE
   reset = smallerDisplayDimension/smallerDisplayDimension;
   rectFaceX = (displayWidth*1/2) - (smallerDisplayDimension*1/2); 
@@ -11,7 +11,8 @@ void population ()
   faceY = displayHeight*1/2; 
   faceDiameter = displayHeight;
   //
-
+  
+  //Eyes
   leftEyeX = displayWidth*3/8;
   rightEyeX = displayWidth*5/8; 
   leftEyeY = displayHeight*1/2;
@@ -59,7 +60,7 @@ void population ()
   smileX4=mouthX*103/100;
   smileY4=smileY3;
 
-   
+
   //Blush
   leftXBlush1a= leftEyeX-(eyeDiameter*1/2);
   leftYBlush1a=leftEyeY+(eyeDiameter);
@@ -98,16 +99,6 @@ void population ()
   rectApronY=leftEyeY+(eyeDiameter*3); 
   rectApronWidth=rightEyeX-leftEyeX;
   rectApronHeight= smallerDisplayDimension*1/6;
-  Pic1 = loadImage("italy's flag - 960x640.png");
-  if (Pic1Width > Pic1Height) {
-    largerPic1Dimension=Pic1Width;
-    smallerPic1Dimension=Pic1Height;
-    widthPic1Larger=true;
-  } else {
-    largerPic1Dimension=Pic1Height;
-    smallerPic1Dimension=Pic1Width;
-    heightPic1Larger=true;
-  }
   titleFont = createFont("Calibri Bold Italic", 80);
 
 
@@ -163,8 +154,8 @@ void population ()
   stringRightY=stringLeftY;
   stringRightWidth=stringLeftWidth;
   stringRightHeight=stringLeftHeight;
-  
-  
+
+
 
   //HANDS
   lilhandLeftX1=displayWidth*46/200;
@@ -177,5 +168,4 @@ void population ()
   lilhandRightY1=lilhandLeftY1;
   lilhandRightX2=displayWidth*154/200;
   lilhandRightY2=lilhandLeftY2;
-
 }//End population

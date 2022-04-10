@@ -1,10 +1,8 @@
-void leaves ()
+void Leaves ()
 
 {
 
 //Leaves
-float leafWidth = eyeDiameter*1/4; 
-float leafHeight= random (eyeDiameter*1/3, eyeDiameter*2); //large measle=*1/25 small measle=*1/100
 float leafX1 =random(displayWidth*3/8, displayWidth*5/8);
 float leafY1 = random(smallerDisplayDimension*1/50,smallerDisplayDimension*1/20 );
 float leafX2= displayWidth*1/2;

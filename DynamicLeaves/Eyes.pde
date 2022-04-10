@@ -6,7 +6,7 @@ float firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2;
 float secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2;
 //End global variables
 
-void eyes ()
+void Eyes ()
 {
   //Left Eye
   stroke(black);
@@ -15,12 +15,12 @@ void eyes ()
   ellipse (leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
   line(leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2);
   line(rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2);
-
-  strokeWeight(boldLine);
-  line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
-  line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
   //
   //Right Eye
   ellipse (rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
   strokeWeight(reset);
+
+  strokeWeight(boldLine);
+  line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
+  line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
 }//End eye code

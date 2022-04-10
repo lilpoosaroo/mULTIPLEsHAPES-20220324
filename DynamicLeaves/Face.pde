@@ -1,4 +1,9 @@
-void face ()
+//Global Variables
+float rectFaceX, rectFaceY, rectFaceDisplayWidth, rectFaceDisplayHeight; 
+float faceX, faceY, faceDiameter; 
+//
+
+void Face ()
 {
 //Face:circle = inscribing a circle in a square.  
 //For the face: want a circle in the middle of the screen, have to know what the larger size
