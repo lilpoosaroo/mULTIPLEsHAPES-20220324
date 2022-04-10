@@ -30,7 +30,7 @@ float rightBlush1XA, rightBlush1YA, rightBlush1XB, rightBlush1YB;
 float rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB;
 float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
 
-
+//APRON body
 float rectApronX, rectApronY, rectApronWidth, rectApronHeight;
 PImage Pic1;
 int Pic1Width=960;
@@ -39,12 +39,19 @@ int Pic1Height=640;
 //int Pic1HeightAdjusted=;
 int largerPic1Dimension, smallerPic1Dimension;
 Boolean widthPic1Larger= false, heightPic1Larger=false;
+//APRON strings
+float stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight;
+//APRON border
 color italianFlagGreen=#2F9739; 
 color italianFlagRed= #D63A31;
-float circle1AX, circle1AY, circle2AX, circle2AY, circle3AX, circle3AY, circle4AX, circle4AY;
-float circle1BX, circle1BY;
-float circle1CX, circle1CY;
-String title = "I love you from my head to-ma-toes";
+float circleApronDiameter;
+float circle1AX, circle1AY, circle1BX, circle1BY, circle1CX, circle1CY;
+float circle2AX, circle2AY, circle2BX, circle2BY, circle2CX, circle2CY; 
+float circle2DX, circle2DY, circle2EX, circle2EY, circle2FX, circle2FY;
+float circle2GX, circle2GY, circle2HX, circle2HY;
+float circle3AX, circle3AY, circle3BX, circle3BY, circle3CX, circle3CY;
+float circle4AX, circle4AY;
+String title = "  I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes";
 PFont titleFont;
 color green=#266C0F;
 //
@@ -172,7 +179,7 @@ void setup ()
   rightBlush3XB= rightBlush2XA;
   rightBlush3YB= rightBlush1YB;
 
-  //APRON
+  //APRON rectangle
 
   rectApronX=leftEyeX;
   rectApronY=leftEyeY+(eyeDiameter*3); 
@@ -188,19 +195,52 @@ void setup ()
     smallerPic1Dimension=Pic1Width;
     heightPic1Larger=true;
   }
+  titleFont = createFont("Calibri Bold Italic", 80);
+  
+  //APRON strings
+  stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight
+  
+  //APRON lining
+  
+  circleApronDiameter=rectApronWidth*1/8;
   circle1AX=rectApronX;
   circle1AY=rectApronY;
-  circle2AX=rectApronX;
-  circle2AY=rectApronY+rectApronHeight; 
-  circle3AX=rectApronX+rectApronWidth;
-  circle3AY=rectApronY+rectApronHeight;
-  circle4AX=rectApronX+rectApronWidth;
-  circle4AY=rectApronY;
-  titleFont = createFont("Calibri Bold Italic", 80);
   circle1BX=rectApronX;
   circle1BY=rectApronY+(rectApronHeight*1/3);
   circle1CX=rectApronX;
   circle1CY=circle1BY+(rectApronHeight*1/3);
+  
+  circle2AX=rectApronX;
+  circle2AY=rectApronY+rectApronHeight;
+  
+  circle2BX=circle2AX+circleApronDiameter;
+  circle2BY=circle2AY;
+  circle2CX=circle2BX+circleApronDiameter;
+  circle2CY=circle2AY;
+  
+  circle2DX=circle2CX+circleApronDiameter;
+  circle2DY=circle2AY;
+  circle2EX=circle2DX+circleApronDiameter;
+  circle2EY=circle2AY;
+  circle2FX=circle2EX+circleApronDiameter;
+  circle2FY=circle2AY;
+  circle2GX=circle2FX+circleApronDiameter;
+  circle2GY=circle2AY;
+  circle2HX= circle2GX+circleApronDiameter;;
+  circle2HY=circle2AY;
+  
+  
+  circle3AX=rectApronX+rectApronWidth;
+  circle3AY=rectApronY+rectApronHeight;
+  circle3BX=circle3AX;
+  circle3BY=circle3AY-circleApronDiameter;
+  circle3CX=circle3AX;
+  circle3CY=circle3BY-circleApronDiameter;
+  
+  circle4AX=rectApronX+rectApronWidth;
+  circle4AY=rectApronY;
+ 
+
 
 
 
@@ -234,19 +274,32 @@ void setup ()
   noStroke();
   rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);
   image(Pic1, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
-  fill(italianFlagGreen);
-  ellipse(circle1AX, circle1AY, rectApronWidth*1/8, rectApronWidth*1/8);
-  ellipse(circle1BX, circle1BY, rectApronWidth*1/8, rectApronWidth*1/8);
-  ellipse(circle1CX, circle1CY, rectApronWidth*1/8, rectApronWidth*1/8); 
-  ellipse(circle2AX, circle2AY, rectApronWidth*1/8, rectApronWidth*1/8);
-  fill(italianFlagRed);
-  ellipse(circle3AX, circle3AY, rectApronWidth*1/8, rectApronWidth*1/8); 
-  ellipse(circle4AX, circle4AY, rectApronWidth*1/8, rectApronWidth*1/8);
- 
-  fill(green); 
+  
+  fill(black); 
   textAlign(CENTER, CENTER); 
-  textFont(titleFont, 30); //Change the number until it fits
+  textFont(titleFont, 10); //Change the number until it fits
   text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
+  fill(italianFlagGreen);
+  rect(stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight);
+  ellipse(circle1AX, circle1AY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle1BX, circle1BY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle1CX, circle1CY, circleApronDiameter, circleApronDiameter); 
+  ellipse(circle2AX, circle2AY, circleApronDiameter, circleApronDiameter);
+  fill(white);
+  ellipse(circle2BX, circle2BY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle2CX, circle2CY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle2DX, circle2DY, circleApronDiameter, circleApronDiameter);
+  ellipse( circle2EX, circle2EY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle2FX, circle2FY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle2GX, circle2GY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle2HX, circle2HY, circleApronDiameter, circleApronDiameter);
+  fill(italianFlagRed);
+  ellipse(circle3AX, circle3AY, circleApronDiameter, circleApronDiameter); 
+  ellipse(circle3BX, circle3BY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle3CX, circle3CY, circleApronDiameter, circleApronDiameter);
+  ellipse(circle4AX, circle4AY, circleApronDiameter, circleApronDiameter);
+
+ 
   //
   //ellipse
   String[] fontList = PFont.list(); //To list all fonts available on OS

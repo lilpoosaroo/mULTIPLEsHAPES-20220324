@@ -5,13 +5,15 @@ void leaves ()
 //Leaves
 float leafWidth = eyeDiameter*1/4; 
 float leafHeight= random (eyeDiameter*1/3, eyeDiameter*2); //large measle=*1/25 small measle=*1/100
-float leafX =random(displayWidth*1/2 - (eyeDiameter),displayWidth*1/2 + (eyeDiameter) );
-float leafY = random (smallerDisplayDimension*1/16, smallerDisplayDimension*1/8);
+float leafX1 =random(displayWidth*3/8, displayWidth*5/8);
+float leafY1 = random(smallerDisplayDimension*1/50,smallerDisplayDimension*1/20 );
+float leafX2= displayWidth*1/2;
+float leafY2=smallerDisplayDimension*1/8;
 Boolean nightMode = false; //note: IF-ELSE statement is similiar to ternary operator. 
 
-color leaf = ( nightMode == false) ? color( 111, 160, 17 ): color(26, 120, 23); //ternary operator
-//rect( measleX-measleDiameter*3/2+measleDiameter, measleY-measleDiameter*3/2+measleDiameter, measleDiameter, measleDiameter); 
-fill(leaf);
-ellipse(leafX, leafY, leafWidth, leafHeight);
-stroke(green);
+color leaf = ( nightMode == false) ? color( random(26,111), random(120,160), random(0,17)): color(26, 120, 0); //ternary operator
+stroke(leaf);
+strokeWeight( random(mouthOpen*1/4,mouthOpen*1/2));
+line(leafX1, leafY1,leafX2, leafY2);
+strokeWeight(reset);
 }//End measle code 
