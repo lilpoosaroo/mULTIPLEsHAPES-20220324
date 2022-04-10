@@ -246,7 +246,7 @@ void setup ()
   stringLeftWidth=(rectApronWidth*5/6)+(circleApronDiameter*1/2);
   stringLeftHeight=circleApronDiameter*1/2;
   
-  stringMidX=smileX1-(circleApronDiameter);
+  stringMidX=smileX1-(circleApronDiameter*107/100);
   stringMidY=circle1AY-(circleApronDiameter*1/2);
   stringMidWidth=(rectApronWidth*1/3);
   stringMidHeight=circleApronDiameter*1/2;
