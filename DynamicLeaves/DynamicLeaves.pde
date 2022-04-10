@@ -44,6 +44,8 @@ Boolean widthPic1Larger= false, heightPic1Larger=false;
 float stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight;
 float  stringMidX, stringMidY, stringMidWidth, stringMidHeight; 
 float stringRightX, stringRightY, stringRightWidth, stringRightHeight;
+float lilhandLeftX1, lilhandLeftY1, lilhandLeftX2, lilhandLeftY2;
+float lilhandRightX1, lilhandRightY1, lilhandRightX2, lilhandRightY2;
 //APRON border
 color italianFlagGreen=#2F9739; 
 color italianFlagRed= #D63A31;
@@ -245,10 +247,6 @@ void setup ()
   //APRON strings
   stringLeftX=rectFaceX+(circleApronDiameter*1/2);
   stringLeftY=circle1AY-(circleApronDiameter*1/2);
-  coverENDLeftStringX1=displayWidth*30/100;
-  coverENDLeftStringY1=;
-  coverENDLeftStringX2=;
-  coverENDLeftStringY2=stringLeftY-(circleApronDiameter*1/2);
   stringLeftWidth=(rectApronWidth*5/6)+(circleApronDiameter*4/5);
   stringLeftHeight=circleApronDiameter*1/2;
 
@@ -259,12 +257,21 @@ void setup ()
 
   stringRightX=stringMidX+(rectApronWidth*1/3);
   stringRightY=stringLeftY;
-  coverENDRightStringX1=displayWidth*79/100;
-  coverENDRightStringY1=coverENDLeftStringY1;
-  coverENDRightStringX2=;
-  coverENDRightStringY2=coverENDLeftStringY2;
   stringRightWidth=stringLeftWidth;
   stringRightHeight=stringLeftHeight;
+
+
+  lilhandLeftX1=displayWidth*46/200;
+  lilhandLeftY1= stringLeftY;
+  lilhandLeftX2= stringLeftX-(circleApronDiameter*1/7);
+  lilhandLeftY2=stringLeftY+(circleApronDiameter*1/2);
+
+
+  lilhandRightX1=displayWidth*154/200;
+  lilhandRightY1=lilhandLeftY1;
+  lilhandRightgX2=displayWidth*154/200;
+  lilhandRightY2=lilhandLeftY2;
+
 
 
 
@@ -326,6 +333,13 @@ void setup ()
   ellipse(circle3BX, circle3BY, circleApronDiameter, circleApronDiameter);
   ellipse(circle3CX, circle3CY, circleApronDiameter, circleApronDiameter);
   ellipse(circle4AX, circle4AY, circleApronDiameter, circleApronDiameter);
+  stroke(black);
+  strokeWeight(mouthOpen*1/5);
+  line(lilhandLeftX1, lilhandLeftY1, lilhandLeftX2, lilhandLeftY2);
+  strokeWeight(mouthOpen*1/5);
+  line(lilhandRightX1, lilhandRightY1, lilhandRightX2, lilhandRightY2);
+  strokeWeight(reset);
+  noStroke();
 
 
   //
