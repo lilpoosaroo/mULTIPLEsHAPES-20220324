@@ -1,21 +1,10 @@
-
-/*
-leftEyeX = displayWidth*3/8;
-rightEyeX = displayWidth*5/8; 
-leftEyeY = displayHeight*1/2;
-rightEyeY = leftEyeY; 
-eyeDiameter = smallerDisplayDimension*1/16;
-rectLeftEyeX= leftEyeX-(eyeDiameter*1/2); 
-rectLeftEyeY= displayHeight*1/8;  
-rectEyeDisplayWidth= smallerDisplayDimension*1/4;
-rectEyeDisplayHeight= smallerDisplayDimension*1/4;
-rectRightEyeX= rightEyeX-(eyeDiameter*1/2); 
-rectRightEyeY= displayHeight*1/8;  
-*/
-
-
-
-
+//Global Variables
+float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
+float leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2;
+float rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2;
+float firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2;
+float secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2;
+//End global variables
 
 void eyes ()
 {

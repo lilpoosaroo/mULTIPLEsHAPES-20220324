@@ -7,57 +7,9 @@ int boldLine;
 color tomatoRed=#EA1C1C;
 color white=#FFFFFF;
 color black=#000000;
-float rectLeftEyeX, rectLeftEyeY, rectRightEyeX, rectRightEyeY, rectEyeDisplayWidth, rectEyeDisplayHeight;
-float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDiameter;
-float leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2;
-float rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2;
-float firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2;
-float secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2;
 
 
-float rectNoseX, rectNoseY, rectNoseDisplayWidth, rectNoseDisplayHeight;
-float xNose1, yNose1, xNose2, yNose2, xNose3, yNose3;
 
-float rectMouthX, rectMouthY, rectMouthDisplayWidth, rectMouthDisplayHeight;
-float mouthX, mouthY;
-float smileX1, smileY1, smileX2, smileY2;
-float smileX3, smileY3, smileX4, smileY4;
-
-float leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b; 
-float leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b;
-float leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b;
-float rightBlush1XA, rightBlush1YA, rightBlush1XB, rightBlush1YB;
-float rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB;
-float rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB;
-
-//APRON body
-float rectApronX, rectApronY, rectApronWidth, rectApronHeight;
-PImage Pic1;
-int Pic1Width=960;
-int Pic1Height=640;
-//int Pic1WidthAdjusted=;
-//int Pic1HeightAdjusted=;
-int largerPic1Dimension, smallerPic1Dimension;
-Boolean widthPic1Larger= false, heightPic1Larger=false;
-
-//APRON strings
-float stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight;
-float  stringMidX, stringMidY, stringMidWidth, stringMidHeight; 
-float stringRightX, stringRightY, stringRightWidth, stringRightHeight;
-float lilhandLeftX1, lilhandLeftY1, lilhandLeftX2, lilhandLeftY2;
-float lilhandRightX1, lilhandRightY1, lilhandRightX2, lilhandRightY2;
-//APRON border
-color italianFlagGreen=#2F9739; 
-color italianFlagRed= #D63A31;
-float circleApronDiameter;
-float circle1AX, circle1AY, circle1BX, circle1BY, circle1CX, circle1CY;
-float circle2AX, circle2AY, circle2BX, circle2BY, circle2CX, circle2CY; 
-float circle2DX, circle2DY, circle2EX, circle2EY, circle2FX, circle2FY;
-float circle2GX, circle2GY, circle2HX, circle2HY;
-float circle3AX, circle3AY, circle3BX, circle3BY, circle3CX, circle3CY;
-float circle4AX, circle4AY;
-String title = " I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes I love you from my head to-ma-toes";
-PFont titleFont;
 color green=#266C0F;
 //
 void setup ()
@@ -67,7 +19,7 @@ void setup ()
   //
   DisplayGeometryDisplayOrientation ();
   //
- 
+  population();
 
   //END OF POPULATING VARIABLES. 
   //
@@ -133,7 +85,7 @@ void setup ()
   noStroke();
 
 
- 
+
   //String[] fontList = PFont.list(); //To list all fonts available on OS
   //printArray(fontList); //For listing all possible fonts to choose from, then createFont
 }//END setup
