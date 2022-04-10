@@ -7,9 +7,6 @@ int boldLine;
 color tomatoRed=#EA1C1C;
 color white=#FFFFFF;
 color black=#000000;
-
-
-
 color green=#266C0F;
 //
 void setup ()
@@ -26,26 +23,8 @@ void setup ()
   face ();
   mouth ();
   eyes ();
-  line(leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2);
-  line(rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2);
-
-  strokeWeight(boldLine);
-  line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
-  line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
-  //Blush
-  //leftEyeBlush3=;
-  //leftEyeBlush1=;
-  //leftEyeBlush2=;
-  //leftEyeBlush3=;
-  strokeWeight(mouthOpen*1/23);
-  line(leftXBlush1a, leftYBlush1a, leftXBlush1b, leftYBlush1b);
-  line(leftXBlush2a, leftYBlush2a, leftXBlush2b, leftYBlush2b);
-  line(leftXBlush3a, leftYBlush3a, leftXBlush3b, leftYBlush3b);
-
-  line(rightBlush1XA, rightBlush1YA, rightBlush1XB, rightBlush1YB);
-  line(rightBlush2XA, rightBlush2YA, rightBlush2XB, rightBlush2YB);
-  line(rightBlush3XA, rightBlush3YA, rightBlush3XB, rightBlush3YB);
-  strokeWeight(reset);
+ 
+ 
   //APRON
   noStroke();
   rect(rectApronX, rectApronY, rectApronWidth, rectApronHeight);

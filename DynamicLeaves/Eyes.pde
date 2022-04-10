@@ -8,16 +8,19 @@ float secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2;
 
 void eyes ()
 {
-//Left Eye
-//rect(rectLeftEyeX, rectLeftEyeY, rectEyeDisplayWidth, rectEyeDisplayHeight);
-stroke(black);
-strokeWeight(mouthOpen*1/18);
-fill(white);
-ellipse (leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
-//
-//Right Eye
-//rect(rectRightEyeX, rectRightEyeY, rectEyeDisplayWidth, rectEyeDisplayHeight);
+  //Left Eye
+  stroke(black);
+  strokeWeight(mouthOpen*1/18);
+  fill(white);
+  ellipse (leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
+  line(leftEyeLineX1, leftEyeLineY1, leftEyeLineX2, leftEyeLineY2);
+  line(rightEyeLineX1, rightEyeLineY1, rightEyeLineX2, rightEyeLineY2);
 
-ellipse (rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
-strokeWeight(reset);
+  strokeWeight(boldLine);
+  line(firstboldLineX1, firstboldLineY1, firstboldLineX2, firstboldLineY2);
+  line(secondboldLineX1, secondboldLineY1, secondboldLineX2, secondboldLineY2);
+  //
+  //Right Eye
+  ellipse (rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
+  strokeWeight(reset);
 }//End eye code
