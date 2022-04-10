@@ -41,6 +41,8 @@ int largerPic1Dimension, smallerPic1Dimension;
 Boolean widthPic1Larger= false, heightPic1Larger=false;
 //APRON strings
 float stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight;
+float  stringMidX, stringMidY, stringMidWidth, stringMidHeight; 
+//float stringRightX, stringRightY, stringRightWidth, stringRightHeight;
 //APRON border
 color italianFlagGreen=#2F9739; 
 color italianFlagRed= #D63A31;
@@ -196,9 +198,7 @@ void setup ()
     heightPic1Larger=true;
   }
   titleFont = createFont("Calibri Bold Italic", 80);
-  
-  //APRON strings
-  stringLeftX, stringLeftY, stringLeftWidth, stringLeftHeight
+ 
   
   //APRON lining
   
@@ -239,6 +239,17 @@ void setup ()
   
   circle4AX=rectApronX+rectApronWidth;
   circle4AY=rectApronY;
+  
+  //APRON strings
+  stringLeftX=rectFaceX+(circleApronDiameter*1/2);
+  stringLeftY=circle1AY-(circleApronDiameter*1/2);
+  stringLeftWidth=(rectApronWidth*5/6)+(circleApronDiameter*1/2);
+  stringLeftHeight=circleApronDiameter*1/2;
+  
+  stringMidX=smileX1-(circleApronDiameter);
+  stringMidY=circle1AY-(circleApronDiameter*1/2);
+  stringMidWidth=(rectApronWidth*1/3);
+  stringMidHeight=circleApronDiameter*1/2;
  
 
 
@@ -286,6 +297,7 @@ void setup ()
   ellipse(circle1CX, circle1CY, circleApronDiameter, circleApronDiameter); 
   ellipse(circle2AX, circle2AY, circleApronDiameter, circleApronDiameter);
   fill(white);
+  rect(stringMidX, stringMidY, stringMidWidth, stringMidHeight);
   ellipse(circle2BX, circle2BY, circleApronDiameter, circleApronDiameter);
   ellipse(circle2CX, circle2CY, circleApronDiameter, circleApronDiameter);
   ellipse(circle2DX, circle2DY, circleApronDiameter, circleApronDiameter);
