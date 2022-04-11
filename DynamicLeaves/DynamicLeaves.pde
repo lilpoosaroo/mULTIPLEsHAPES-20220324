@@ -6,6 +6,9 @@ color tomatoRed=#EA1C1C;
 color white=#FFFFFF;
 color black=#000000;
 color green=#266C0F;
+color italianFlagGreen=#2F9739; 
+color italianFlagRed= #BF2328;
+color buttonColor;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 //
 void setup ()
@@ -45,11 +48,18 @@ void draw ()
 {
 
   Leaves();
-  stroke(italianFlagRed);
-  strokeWeight(mouthOpen*5/8);
-  fill(italianFlagRed);
+  
+  if(mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonHeight){
+  
+  }else {
+  
+  }
+  stroke(black);
+  fill(buttonColor);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  strokeWeight(mouthOpen);
   //
+  
 }//end draw
 
 //
