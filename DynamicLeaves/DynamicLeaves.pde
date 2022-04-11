@@ -45,6 +45,9 @@ void draw ()
 {
 
   Leaves();
+  stroke(italianFlagRed);
+  strokeWeight(mouthOpen*5/8);
+  fill(italianFlagRed);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
   //
 }//end draw

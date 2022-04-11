@@ -16,7 +16,7 @@ float lilhandLeftX1, lilhandLeftY1, lilhandLeftX2, lilhandLeftY2;
 float lilhandRightX1, lilhandRightY1, lilhandRightX2, lilhandRightY2;
 //APRON border
 color italianFlagGreen=#2F9739; 
-color italianFlagRed= #D63A31;
+color italianFlagRed= #BF2328;
 float circleApronDiameter;
 float circle1AX, circle1AY, circle1BX, circle1BY, circle1CX, circle1CY;
 float circle2AX, circle2AY, circle2BX, circle2BY, circle2CX, circle2CY; 
