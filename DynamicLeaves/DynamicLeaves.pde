@@ -50,9 +50,9 @@ void draw ()
   Leaves();
   
   if(mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonHeight){
-  
+   buttonColor= italianFlagGreen=#2F9739; 
   }else {
-  
+  buttonColor= italianFlagRed;
   }
   stroke(black);
   fill(buttonColor);
