@@ -13,7 +13,9 @@ void setup ()
 
   fullScreen (); //it is a question dont put in numbers
   //Landscape should be landscape not portrait
-  String displayOrientation= (displayWidth >= displayHeight) ? "Yay you are in landscape mode" : "Turn your phone kiddo";
+  String landscape = "Yay you are in landscape mode";
+  String portrait = "Turn your phone kiddo";
+  String displayOrientation= (displayWidth >= displayHeight) ? landscape : portrait;
   if (displayWidth < displayHeight) println(displayOrientation);
   if(displayWidth >= displayHeight) appWidth= displayWidth;
   if(displayWidth >= displayHeight) appHeight = displayHeight;
