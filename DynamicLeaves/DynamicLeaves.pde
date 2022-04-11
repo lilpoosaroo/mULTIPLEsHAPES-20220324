@@ -1,6 +1,6 @@
 //Global Variables, variable that runs in the ain program and all the sub programs
 int reset, smallerDisplayDimension, mouthOpen; 
-int appWidth, appHeight;
+int appDisplayWidth, appDisplayHeight;
 int boldLine;
 color tomatoRed=#EA1C1C;
 color white=#FFFFFF;
@@ -13,19 +13,15 @@ void setup ()
 
   fullScreen (); //it is a question dont put in numbers
   //Landscape should be landscape not portrait
-  String landscape = "Yay you are in landscape mode";
-  String portrait = "Turn your phone kiddo";
-  String displayOrientation= (displayWidth >= displayHeight) ? landscape : portrait;
-  if (displayWidth < displayHeight) println(displayOrientation);
-  if(displayWidth >= displayHeight) appWidth= displayWidth;
-  if(displayWidth >= displayHeight) appHeight = displayHeight;
+  
  
   //
   DisplayGeometryDisplayOrientation ();
   DeterminingLargerDimension();
   //
   population();
-  quitButtonX=displayWidth*1/4;
+ // int canvasCenter = displayWidth*1/2;
+  quitButtonX=displayWidth*1/16;
   quitButtonY=smallerDisplayDimension*1/4;
   quitButtonWidth=eyeDiameter*3;
   quitButtonHeight=eyeDiameter*2;
