@@ -49,11 +49,13 @@ void draw ()
 
   Leaves();
   
-  if(mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonHeight){
+  if(mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight){
    buttonColor= italianFlagGreen=#2F9739; 
   }else {
   buttonColor= italianFlagRed;
-  }
+  } //End Hover-Over Effect
+ println("X-value", quitButtonX, mouseX, quitButtonX+quitButtonWidth, "/t/t Look at the middle value");
+ println("Y-value", quitButtonY, mouseY, quitButtonY+quitButtonHeight, "/t/t Look at the middle value");
   stroke(black);
   fill(buttonColor);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
