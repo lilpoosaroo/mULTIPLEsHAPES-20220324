@@ -1,6 +1,6 @@
 # mULTIPLEsHAPES-20220324
 Lesson
 <br>
-https://th.bing.com/th/id/OIP.3HpNqXoW0EgOCLvnKLmcZgHaFj?w=264&h=198&c=7&r=0&o=5&pid=1.7
+![image](https://user-images.githubusercontent.com/98977371/163021746-1b7f5e6c-22a0-4ece-9208-b949920f27c4.png)
 <br>
 ![image](https://user-images.githubusercontent.com/98977371/163021638-32779528-88e5-4242-8f08-60711718cf82.png)
