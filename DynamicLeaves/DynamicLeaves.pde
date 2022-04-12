@@ -14,7 +14,8 @@ float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 void setup ()
 {
 
-  fullScreen (); //it is a question dont put in numbers
+  fullScreen (); //it is a question dont put in numbers 
+  //NEEDS TO BE IN VOID SETUP
   //Landscape should be landscape not portrait
   
  
@@ -54,8 +55,10 @@ void draw ()
   }else {
   buttonColor= italianFlagRed;
   } //End Hover-Over Effect
- println("X-value", quitButtonX, mouseX, quitButtonX+quitButtonWidth, "/t/t Look at the middle value");
- println("Y-value", quitButtonY, mouseY, quitButtonY+quitButtonHeight, "/t/t Look at the middle value");
+  //
+ println("X-value", quitButtonX, mouseX, quitButtonX+quitButtonWidth, "\t\t Look at the middle value");
+ println("Y-value", quitButtonY, mouseY, quitButtonY+quitButtonHeight, "\t\t Look at the middle value");
+  //
   stroke(black);
   fill(buttonColor);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
@@ -74,7 +77,9 @@ void keyPressed ()
   //keyCode means not letter buttons
 }//End Keypressed
 //
-void mousePressed () {
+void mousePressed () 
+{
+  if( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit(); //When we press the button the program will close
 }//End mousePressed
 //
 //End Main Program 
