@@ -10,6 +10,11 @@ color italianFlagGreen=#2F9739;
 color italianFlagRed= #BF2328;
 color buttonColor;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+float babyLeftEyeX, babyLeftEyeY, babyLeftEyeWidth, babyLeftEyeHeight;
+float babyRightEyeX, babyRightEyeY, babyRightEyeWidth, babyRightEyeHeight;
+float smileCirleX, smileCircleY, smileCircleWidth, smileCircleHeight;
+float smileLineX1, smileLineY1, smileLineX2, smileLineY2;
+float beautyMark1X, 
 //
 void setup ()
 {
@@ -25,9 +30,9 @@ void setup ()
   //
   population();
  // int canvasCenter = displayWidth*1/2;
-  quitButtonX=displayWidth*1/16;
+  quitButtonX=displayWidth*1/10;
   quitButtonY=smallerDisplayDimension*1/4;
-  quitButtonWidth=eyeDiameter*3;
+  quitButtonWidth=eyeDiameter*2;
   quitButtonHeight=eyeDiameter*2;
 
   
@@ -37,7 +42,6 @@ void setup ()
   Blush();
   Apron();
   Hands();
-  
   
 
 
@@ -49,8 +53,7 @@ void draw ()
 {
 
   Leaves();
-  
-  if(mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight){
+  if(mouseX>quitButtonX-(quitButtonWidth*1/2) && mouseX<quitButtonX+(quitButtonWidth*1/2) && mouseY>quitButtonY-(quitButtonHeight*1/2) && mouseY<quitButtonY+(quitButtonHeight*1/2)){
    buttonColor= italianFlagGreen=#2F9739; 
   }else {
   buttonColor= italianFlagRed;
@@ -61,9 +64,12 @@ void draw ()
   //
   stroke(black);
   fill(buttonColor);
-  rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  ellipse(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
   strokeWeight(mouthOpen);
-  //
+  strokeWeight(reset);
+  noStroke();
+  
+ 
   
 }//end draw
 
