@@ -22,11 +22,13 @@ float THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2;
 
 
 float frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight;
-/*
- float babyLeftEyeX, babyLeftEyeY, babyLeftEyeWidth, babyLeftEyeHeight;
- float babyRightEyeX, babyRightEyeY, babyRightEyeWidth, babyRightEyeHeight;
- float smileCirleX, smileCircleY, smileCircleWidth, smileCircleHeight;
+float babyLeftEyeX, babyLeftEyeY, babyRightEyeX, babyRightEyeY;
+float babyEyeDiameter;
+
+
+ float smileCirleX, smileCircleY, smileCircleDiameter;
  float smileLineX1, smileLineY1, smileLineX2, smileLineY2;
+ /*
  float beautyMark1X; 
  */
 //
@@ -53,7 +55,7 @@ void setup ()
   rightQuitButtonY=leftQuitButtonY;
   quitButtonWidth=eyeDiameter*35/20;
   quitButtonHeight=eyeDiameter*2;
-  
+
   FIRSTbabyLeafX1=leftQuitButtonX+(quitButtonWidth*30/100);
   FIRSTbabyLeafY1=leftQuitButtonY-(quitButtonHeight*30/100);
   FIRSTbabyLeafX2=displayWidth*1/13;
@@ -68,17 +70,35 @@ void setup ()
   THIRDbabyLeafY1=FIRSTbabyLeafY1;
   THIRDbabyLeafX2=displayWidth*1/8;
   THIRDbabyLeafY2=FIRSTbabyLeafY2;
-  
-  
+
+
   //FRONT OF BODY
   frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
   frontBodyY=smallerDisplayDimension*1/2;
   frontBodyWidth=quitButtonWidth*4/3;
   frontBodyHeight=quitButtonHeight;
 
-
-
+  babyLeftEyeX=frontBodyX;
+  babyLeftEyeY=frontBodyY-(frontBodyHeight*1/8);
+  babyRightEyeX=frontBodyX+(frontBodyWidth*1/4);
+  babyRightEyeY=babyLeftEyeY;
+  babyEyeDiameter=eyeDiameter*1/4;
   
+  
+ smileCirleX=babyRightEyeX*92/100;
+ smileCircleY=babyLeftEyeY*102/100;
+ smileCircleDiameter=babyEyeDiameter;
+ 
+ smileLineX1=smileCirleX-(babyEyeDiameter*1/2);
+ smileLineY1=smileCircleY-(babyEyeDiameter*40/100);
+ smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
+ smileLineY2=smileLineY1;
+
+
+
+
+
+
 
 
   Face ();
@@ -88,10 +108,24 @@ void setup ()
   Apron();
   Hands();
 
+  //FRONT BODY
   fill(italianFlagRed);
   noStroke();
   ellipse( frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight);
-    
+  fill(black);
+  //FRONT BODY EYE
+  ellipse(babyLeftEyeX, babyLeftEyeY, babyEyeDiameter, babyEyeDiameter);
+  ellipse(babyRightEyeX, babyRightEyeY, babyEyeDiameter, babyEyeDiameter);
+   //FRONT BODY SMILE
+   fill(italianFlagRed);
+   stroke(black);
+   strokeWeight(mouthOpen*1/34);
+   ellipse(smileCirleX, smileCircleY, smileCircleDiameter, smileCircleDiameter);
+   strokeWeight(mouthOpen*1/20);
+   stroke(italianFlagRed);
+  // strokeWeight(mouthOpen*1/4);
+   line(smileLineX1, smileLineY1, smileLineX2, smileLineY2);
+
 
 
 
