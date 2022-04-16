@@ -13,6 +13,7 @@ color leaf1=green;
 color leaf2=italianFlagGreen;
 color leaf3=darkGreen;
 color QuitButton=italianFlagRed;
+color frontBody, frontBodyEyes, frontBodySmileFill, frontBodySmileOutline, mouthLine;
 color disappear=#CCCCCC;
 float leftQuitButtonX, leftQuitButtonY, rightQuitButtonX, rightQuitButtonY;
 float quitButtonWidth, quitButtonHeight;
@@ -74,7 +75,7 @@ void setup ()
 
   //FRONT OF BODY
   frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
-  frontBodyY=smallerDisplayDimension*1/2;
+  frontBodyY=smallerDisplayDimension*1/4;
   frontBodyWidth=quitButtonWidth*4/3;
   frontBodyHeight=quitButtonHeight;
 
@@ -86,7 +87,7 @@ void setup ()
   
   
  smileCirleX=babyRightEyeX*92/100;
- smileCircleY=babyLeftEyeY*102/100;
+ smileCircleY=babyLeftEyeY*105/100;
  smileCircleDiameter=babyEyeDiameter;
  
  smileLineX1=smileCirleX-(babyEyeDiameter*1/2);
@@ -108,23 +109,6 @@ void setup ()
   Apron();
   Hands();
 
-  //FRONT BODY
-  fill(italianFlagRed);
-  noStroke();
-  ellipse( frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight);
-  fill(black);
-  //FRONT BODY EYE
-  ellipse(babyLeftEyeX, babyLeftEyeY, babyEyeDiameter, babyEyeDiameter);
-  ellipse(babyRightEyeX, babyRightEyeY, babyEyeDiameter, babyEyeDiameter);
-   //FRONT BODY SMILE
-   fill(italianFlagRed);
-   stroke(black);
-   strokeWeight(mouthOpen*1/34);
-   ellipse(smileCirleX, smileCircleY, smileCircleDiameter, smileCircleDiameter);
-   strokeWeight(mouthOpen*1/20);
-   stroke(italianFlagRed);
-  // strokeWeight(mouthOpen*1/4);
-   line(smileLineX1, smileLineY1, smileLineX2, smileLineY2);
 
 
 
@@ -145,11 +129,20 @@ void draw ()
     leaf2=italianFlagGreen;
     leaf3=darkGreen;
     QuitButton=italianFlagRed;
+    frontBody=disappear;
+    frontBodyEyes=disappear;
+    frontBodySmileFill=disappear;
+    mouthLine=disappear;
   } else {
-    leaf1=disappear;
-    leaf2=disappear;
-    leaf3=disappear;
+    leaf1=darkGreen;
+    leaf2=italianFlagGreen;
+    leaf3=green;
     QuitButton=disappear;
+    frontBody=italianFlagRed;
+    frontBodyEyes=black;
+    frontBodySmileFill=italianFlagRed;
+    frontBodySmileOutline=black;
+    mouthLine=italianFlagRed;
   } //End Hover-Over Effect
   //
   //println("X-value", leftQuitButtonX, mouseX, quitButtonX+quitButtonWidth, "\t\t Look at the middle value");
@@ -158,7 +151,7 @@ void draw ()
 
 
 
-  noStroke();
+ noStroke();
   fill(QuitButton);
   ellipse(leftQuitButtonX, leftQuitButtonY, quitButtonWidth, quitButtonHeight);
   ellipse(rightQuitButtonX, rightQuitButtonY, quitButtonWidth, quitButtonHeight);
@@ -172,6 +165,23 @@ void draw ()
   line(SECONDbabyLeafX1, SECONDbabyLeafY1, SECONDbabyLeafX2, SECONDbabyLeafY2);
   stroke(leaf3);
   line(THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2);
+  
+   //FRONT BODY
+  fill(frontBody);
+  noStroke();
+  ellipse( frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight);
+  fill(frontBodyEyes);
+  //FRONT BODY EYE
+  ellipse(babyLeftEyeX, babyLeftEyeY, babyEyeDiameter, babyEyeDiameter);
+  ellipse(babyRightEyeX, babyRightEyeY, babyEyeDiameter, babyEyeDiameter);
+   //FRONT BODY SMILE
+   fill(frontBodySmileFill);
+   stroke(frontBodySmileOutline);
+   strokeWeight(mouthOpen*1/34);
+   ellipse(smileCirleX, smileCircleY, smileCircleDiameter, smileCircleDiameter);
+   strokeWeight(mouthOpen*1/18);
+   stroke(mouthLine);
+   line(smileLineX1, smileLineY1, smileLineX2, smileLineY2);
 }//end draw
 
 //
