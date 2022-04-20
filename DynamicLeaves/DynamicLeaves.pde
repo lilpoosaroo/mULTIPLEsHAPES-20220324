@@ -28,6 +28,7 @@ float babyEyeDiameter;
 float smileCirleX, smileCircleY, smileCircleDiameter;
 float smileLineX1, smileLineY1, smileLineX2, smileLineY2;
 float speechBubbleX, speechBubbleY, speechBubbleDiameter;
+float speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3;
 
 
 /*
@@ -80,8 +81,8 @@ void setup ()
 
   frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
   frontBodyY=smallerDisplayDimension*1/2;
-  frontBodyWidth=quitButtonWidth*4/3;
-  frontBodyHeight=quitButtonHeight;
+  frontBodyWidth=quitButtonWidth*5/3;
+  frontBodyHeight=quitButtonHeight*105/100;
 
   babyLeftEyeX=frontBodyX;
   babyLeftEyeY=frontBodyY-(frontBodyHeight*1/8);
@@ -103,7 +104,13 @@ void setup ()
   speechBubbleX=displayWidth*1/5;
   speechBubbleY=displayHeight*1/8;
   speechBubbleDiameter=displayHeight*1/5;
-
+  
+  speechBubbleTriangleX1=displayWidth*14/100;
+  speechBubbleTriangleY1=displayHeight*1/5;
+  speechBubbleTriangleX2=displayWidth*15/90;
+  speechBubbleTriangleY2=displayHeight*15/100;
+  speechBubbleTriangleX3=displayWidth*20/90;
+  speechBubbleTriangleY3=displayHeight*15/100;
 
 
 
@@ -245,12 +252,14 @@ void draw ()
   line(THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2);
   strokeWeight(reset);
   stroke(black); 
-  
+
   fill(speechBubbleFill);
   stroke(speechBubbleOutline);
   strokeWeight(mouthOpen*1/20);
+  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
+  fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
   ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
-  
 }//end draw
 
 //
