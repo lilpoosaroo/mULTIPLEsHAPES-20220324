@@ -20,8 +20,6 @@ float quitButtonWidth, quitButtonHeight;
 float FIRSTbabyLeafX1, FIRSTbabyLeafY1, FIRSTbabyLeafX2, FIRSTbabyLeafY2;
 float SECONDbabyLeafX1, SECONDbabyLeafY1, SECONDbabyLeafX2, SECONDbabyLeafY2;
 float THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2;
-
-
 float frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight;
 float babyLeftEyeX, babyLeftEyeY, babyRightEyeX, babyRightEyeY;
 float babyEyeDiameter;
