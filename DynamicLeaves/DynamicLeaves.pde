@@ -23,10 +23,11 @@ float THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2;
 float frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight;
 float babyLeftEyeX, babyLeftEyeY, babyRightEyeX, babyRightEyeY;
 float babyEyeDiameter;
-
-
 float smileCirleX, smileCircleY, smileCircleDiameter;
 float smileLineX1, smileLineY1, smileLineX2, smileLineY2;
+float speechBubbleX, speechBubbleY, speechBubble Diameter;
+
+
 /*
  float beautyMark1X; 
  */
