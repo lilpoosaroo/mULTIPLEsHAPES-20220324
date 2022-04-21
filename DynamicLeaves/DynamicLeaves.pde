@@ -29,6 +29,8 @@ float smileCirleX, smileCircleY, smileCircleDiameter;
 float smileLineX1, smileLineY1, smileLineX2, smileLineY2;
 float speechBubbleX, speechBubbleY, speechBubbleDiameter;
 float speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3;
+String speech="Click me to close program :)!";
+PFont speechFont; 
 
 
 /*
@@ -105,13 +107,13 @@ void setup ()
   speechBubbleY=displayHeight*1/8;
   speechBubbleDiameter=displayHeight*1/5;
   
-  speechBubbleTriangleX1=displayWidth*14/100;
+  speechBubbleTriangleX1=displayWidth*15/100;
   speechBubbleTriangleY1=displayHeight*1/5;
   speechBubbleTriangleX2=displayWidth*15/90;
   speechBubbleTriangleY2=displayHeight*15/100;
   speechBubbleTriangleX3=displayWidth*20/90;
   speechBubbleTriangleY3=displayHeight*15/100;
-
+  speechFont= createFont("SegoeUI-Light", 50);
 
 
 
@@ -122,14 +124,26 @@ void setup ()
   Blush();
   Apron();
   Hands();
+  
+   fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
+  strokeWeight(mouthOpen*1/20);
+  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
+  fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
+  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  text(speech, speechBubbleX*75/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
+  textFont(speechFont, 15); //Change the number until it fits
+  text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
 
 
 
 
 
-
-  //String[] fontList = PFont.list(); //To list all fonts available on OS
-  //printArray(fontList); //For listing all possible fonts to choose from, then createFont
+  String[] fontList = PFont.list(); //To list all fonts available on OS
+  printArray(fontList); //For listing all possible fonts to choose from, then createFont
 }//END setup
 //
 void draw ()
@@ -253,13 +267,7 @@ void draw ()
   strokeWeight(reset);
   stroke(black); 
 
-  fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  strokeWeight(mouthOpen*1/20);
-  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
-  fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
+
 }//end draw
 
 //
