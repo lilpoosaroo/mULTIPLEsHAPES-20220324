@@ -134,9 +134,10 @@ void setup ()
   ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
   fill(black);
   textAlign(CENTER, CENTER);
-  text(speech, speechBubbleX*75/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
-  textFont(speechFont, 15); //Change the number until it fits
-  text(title, rectApronX, rectApronY, rectApronWidth, rectApronHeight);
+  textFont(speechFont, 23); //Change the number until it fits
+  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
+  
+  
 
 
 
