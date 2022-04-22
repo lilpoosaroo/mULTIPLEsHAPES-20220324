@@ -103,7 +103,7 @@ void setup ()
   speechBubbleX=displayWidth*1/5;
   speechBubbleY=displayHeight*1/8;
   speechBubbleDiameter=displayHeight*1/5;
-  
+
   speechBubbleTriangleX1=displayWidth*15/100;
   speechBubbleTriangleY1=displayHeight*1/5;
   speechBubbleTriangleX2=displayWidth*15/90;
@@ -121,9 +121,9 @@ void setup ()
   Blush();
   Apron();
   Hands();
-  
-  
-  
+
+
+
 
 
 
@@ -212,18 +212,9 @@ void draw ()
     smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
     smileLineY2=smileLineY1;
     
-    fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  strokeWeight(mouthOpen*1/20);
-  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
-  fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
-  fill(black);
-  textAlign(CENTER, TOP);
-  textFont(speechFont, 23); //Change the number until it fits
-  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
- 
+    speechBubbleFill=;
+
+   
   }
 
   //End Hover-Over Effect
@@ -265,9 +256,19 @@ void draw ()
   stroke(leaf3);
   line(THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2);
   strokeWeight(reset);
-  stroke(black); 
-
-
+  stroke(black);
+  
+  fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
+  strokeWeight(mouthOpen*1/20);
+  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
+  fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
+  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
+  fill(black);
+  textAlign(CENTER, TOP);
+  textFont(speechFont, 23); //Change the number until it fits
+  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
 }//end draw
 
 //
