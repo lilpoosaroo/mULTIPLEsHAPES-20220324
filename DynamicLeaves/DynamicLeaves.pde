@@ -29,13 +29,10 @@ float smileCirleX, smileCircleY, smileCircleDiameter;
 float smileLineX1, smileLineY1, smileLineX2, smileLineY2;
 float speechBubbleX, speechBubbleY, speechBubbleDiameter;
 float speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3;
-String speech="Click me to close program :)!";
+String speech="  Click me to         close program       :)!      ";
 PFont speechFont; 
 
 
-/*
- float beautyMark1X; 
- */
 //
 void setup ()
 {
@@ -113,7 +110,7 @@ void setup ()
   speechBubbleTriangleY2=displayHeight*15/100;
   speechBubbleTriangleX3=displayWidth*20/90;
   speechBubbleTriangleY3=displayHeight*15/100;
-  speechFont= createFont("SegoeUI-Light", 50);
+  speechFont= createFont("Bahnschrift", 50);
 
 
 
@@ -125,17 +122,6 @@ void setup ()
   Apron();
   Hands();
   
-   fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  strokeWeight(mouthOpen*1/20);
-  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
-  fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
-  fill(black);
-  textAlign(CENTER, CENTER);
-  textFont(speechFont, 23); //Change the number until it fits
-  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
   
   
 
@@ -225,6 +211,19 @@ void draw ()
     smileLineY1=smileCircleY-(babyEyeDiameter*40/100);
     smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
     smileLineY2=smileLineY1;
+    
+    fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
+  strokeWeight(mouthOpen*1/20);
+  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
+  fill(speechBubbleFill);
+  stroke(speechBubbleOutline);
+  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
+  fill(black);
+  textAlign(CENTER, TOP);
+  textFont(speechFont, 23); //Change the number until it fits
+  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
+ 
   }
 
   //End Hover-Over Effect
