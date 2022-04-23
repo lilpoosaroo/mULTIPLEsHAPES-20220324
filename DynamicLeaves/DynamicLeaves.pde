@@ -10,12 +10,12 @@ color italianFlagGreen=#2F9739;
 color italianFlagRed= #BF2328;
 color darkGreen=#1A5A17;
 color disappear=#CCCCCC;
+color grey=#9B9696;
 color leaf1;
 color leaf2;
 color leaf3;
 color QuitButton;
-color speechBubbleFill=white;
-color speechBubbleOutline=#9B9696; 
+color speechBubbleFill, speechColor, speechBubbleOutline; 
 color frontBody, frontBodyEyes, frontBodySmileFill, frontBodySmileOutline, mouthLine;
 float leftQuitButtonX, leftQuitButtonY, rightQuitButtonX, rightQuitButtonY;
 float quitButtonWidth, quitButtonHeight;
@@ -99,19 +99,8 @@ void setup ()
   smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
   smileLineY2=smileLineY1;
 
-  //Speech bubble
-  speechBubbleX=displayWidth*1/5;
-  speechBubbleY=displayHeight*1/8;
-  speechBubbleDiameter=displayHeight*1/5;
-
-  speechBubbleTriangleX1=displayWidth*15/100;
-  speechBubbleTriangleY1=displayHeight*1/5;
-  speechBubbleTriangleX2=displayWidth*15/90;
-  speechBubbleTriangleY2=displayHeight*15/100;
-  speechBubbleTriangleX3=displayWidth*20/90;
-  speechBubbleTriangleY3=displayHeight*15/100;
+  //Speech Bubble
   speechFont= createFont("Bahnschrift", 50);
-
 
 
 
@@ -151,6 +140,10 @@ void draw ()
     frontBodySmileFill=disappear;
     frontBodySmileOutline=disappear;
     mouthLine=disappear;
+    speechColor=disappear;
+
+    speechBubbleFill=disappear;
+    speechBubbleOutline=disappear;
   } else {
     leaf1=darkGreen;
     leaf2=italianFlagGreen;
@@ -161,6 +154,10 @@ void draw ()
     frontBodyEyes=black;
     frontBodySmileOutline=black;
     QuitButton=disappear;
+
+    speechBubbleFill=white;
+    speechBubbleOutline=grey; 
+    speechColor=black;
   } 
   //When mouse is not touching tomatoe
   if (mouseX>rightQuitButtonX+(quitButtonWidth*1/2) || mouseX<leftQuitButtonX-(quitButtonWidth*1/2) || mouseY>smallerDisplayDimension*1/4+(quitButtonHeight*1/2) || mouseY<smallerDisplayDimension*1/4-(quitButtonHeight*1/2)) 
@@ -183,7 +180,6 @@ void draw ()
     babyRightEyeY=babyLeftEyeY;
 
 
-
     smileCirleX=babyRightEyeX*92/100;
     smileCircleY=babyLeftEyeY*105/100;
     smileCircleDiameter=babyEyeDiameter;
@@ -192,6 +188,19 @@ void draw ()
     smileLineY1=smileCircleY-(babyEyeDiameter*40/100);
     smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
     smileLineY2=smileLineY1;
+
+    speechBubbleX=displayWidth*1/5;
+    speechBubbleY=displayHeight*3/4;
+    speechBubbleDiameter=displayHeight*1/5;
+
+
+    speechBubbleTriangleX1=displayWidth*15/100;
+    speechBubbleTriangleY1=displayHeight*1/5;
+    speechBubbleTriangleX2=displayWidth*15/90;
+    speechBubbleTriangleY2=displayHeight*15/100;
+    speechBubbleTriangleX3=displayWidth*20/90;
+    speechBubbleTriangleY3=displayHeight*15/100;
+   
   } else {
     frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
     frontBodyY=smallerDisplayDimension*1/4;
@@ -211,9 +220,19 @@ void draw ()
     smileLineY1=smileCircleY-(babyEyeDiameter*40/100);
     smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
     smileLineY2=smileLineY1;
-    
-    speechBubbleFill=;
 
+    //Speech Bubble
+
+    speechBubbleX=displayWidth*1/5;
+    speechBubbleY=displayHeight*1/8;
+    speechBubbleDiameter=displayHeight*1/5;
+
+    speechBubbleTriangleX1=displayWidth*15/100;
+    speechBubbleTriangleY1=displayHeight*1/5;
+    speechBubbleTriangleX2=displayWidth*15/90;
+    speechBubbleTriangleY2=displayHeight*15/100;
+    speechBubbleTriangleX3=displayWidth*20/90;
+    speechBubbleTriangleY3=displayHeight*15/100;
    
   }
 
@@ -257,7 +276,7 @@ void draw ()
   line(THIRDbabyLeafX1, THIRDbabyLeafY1, THIRDbabyLeafX2, THIRDbabyLeafY2);
   strokeWeight(reset);
   stroke(black);
-  
+
   fill(speechBubbleFill);
   stroke(speechBubbleOutline);
   strokeWeight(mouthOpen*1/20);
@@ -265,10 +284,11 @@ void draw ()
   fill(speechBubbleFill);
   stroke(speechBubbleOutline);
   ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
-  fill(black);
+  fill(speechColor);
   textAlign(CENTER, TOP);
   textFont(speechFont, 23); //Change the number until it fits
-  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter); 
+  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter);
+  //speechBubbleX*73/100, speechBubbleY*1/2,
 }//end draw
 
 //
