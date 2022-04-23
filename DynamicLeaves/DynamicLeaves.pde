@@ -140,8 +140,8 @@ void draw ()
     frontBodySmileFill=disappear;
     frontBodySmileOutline=disappear;
     mouthLine=disappear;
-    speechColor=disappear;
 
+    speechColor=disappear;
     speechBubbleFill=disappear;
     speechBubbleOutline=disappear;
   } else {
@@ -162,13 +162,16 @@ void draw ()
   //When mouse is not touching tomatoe
   if (mouseX>rightQuitButtonX+(quitButtonWidth*1/2) || mouseX<leftQuitButtonX-(quitButtonWidth*1/2) || mouseY>smallerDisplayDimension*1/4+(quitButtonHeight*1/2) || mouseY<smallerDisplayDimension*1/4-(quitButtonHeight*1/2)) 
   { 
+
     leftQuitButtonX=displayWidth*1/12;
     leftQuitButtonY=displayHeight*1/4;
     rightQuitButtonX= displayWidth*1/8;
     rightQuitButtonY=leftQuitButtonY;
 
 
+
     //FRONT OF BODY
+
 
     frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
     frontBodyY=smallerDisplayDimension;
@@ -189,18 +192,32 @@ void draw ()
     smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
     smileLineY2=smileLineY1;
 
-    speechBubbleX=displayWidth*1/5;
+
+
+
+    speechBubbleX=displayWidth*1/8;
     speechBubbleY=displayHeight*3/4;
     speechBubbleDiameter=displayHeight*1/5;
 
 
     speechBubbleTriangleX1=displayWidth*15/100;
-    speechBubbleTriangleY1=displayHeight*1/5;
-    speechBubbleTriangleX2=displayWidth*15/90;
-    speechBubbleTriangleY2=displayHeight*15/100;
-    speechBubbleTriangleX3=displayWidth*20/90;
-    speechBubbleTriangleY3=displayHeight*15/100;
-   
+    speechBubbleTriangleY1=displayHeight*1/2;
+    speechBubbleTriangleX2=displayWidth*10/90;
+    speechBubbleTriangleY2=displayHeight*1/2;
+    speechBubbleTriangleX3=displayWidth*15/90;
+    speechBubbleTriangleY3=displayHeight*1/2;
+    
+    fill(speechBubbleFill);
+    stroke(speechBubbleOutline);
+    strokeWeight(mouthOpen*1/20);
+    triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
+    fill(speechBubbleFill);
+    stroke(speechBubbleOutline);
+    ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
+    fill(speechColor);
+    textAlign(CENTER, TOP);
+    textFont(speechFont, 23); //Change the number until it fits
+    text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter);
   } else {
     frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
     frontBodyY=smallerDisplayDimension*1/4;
@@ -221,6 +238,8 @@ void draw ()
     smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
     smileLineY2=smileLineY1;
 
+
+
     //Speech Bubble
 
     speechBubbleX=displayWidth*1/5;
@@ -233,7 +252,18 @@ void draw ()
     speechBubbleTriangleY2=displayHeight*15/100;
     speechBubbleTriangleX3=displayWidth*20/90;
     speechBubbleTriangleY3=displayHeight*15/100;
-   
+
+    fill(speechBubbleFill);
+    stroke(speechBubbleOutline);
+    strokeWeight(mouthOpen*1/20);
+    triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
+    fill(speechBubbleFill);
+    stroke(speechBubbleOutline);
+    ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
+    fill(speechColor);
+    textAlign(CENTER, TOP);
+    textFont(speechFont, 23); //Change the number until it fits
+    text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter);
   }
 
   //End Hover-Over Effect
@@ -251,11 +281,12 @@ void draw ()
   noStroke();
 
   //FRONT BODY
-  fill(frontBody);
+
   noStroke();
+  fill(frontBody);
   ellipse( frontBodyX, frontBodyY, frontBodyWidth, frontBodyHeight);
-  fill(frontBodyEyes);
   //FRONT BODY EYE
+  fill(frontBodyEyes);
   ellipse(babyLeftEyeX, babyLeftEyeY, babyEyeDiameter, babyEyeDiameter);
   ellipse(babyRightEyeX, babyRightEyeY, babyEyeDiameter, babyEyeDiameter);
   //FRONT BODY SMILE
@@ -277,17 +308,8 @@ void draw ()
   strokeWeight(reset);
   stroke(black);
 
-  fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  strokeWeight(mouthOpen*1/20);
-  triangle(speechBubbleTriangleX1, speechBubbleTriangleY1, speechBubbleTriangleX2, speechBubbleTriangleY2, speechBubbleTriangleX3, speechBubbleTriangleY3);
-  fill(speechBubbleFill);
-  stroke(speechBubbleOutline);
-  ellipse(speechBubbleX, speechBubbleY, speechBubbleDiameter, speechBubbleDiameter);
-  fill(speechColor);
-  textAlign(CENTER, TOP);
-  textFont(speechFont, 23); //Change the number until it fits
-  text(speech, speechBubbleX*73/100, speechBubbleY*1/2, speechBubbleDiameter, speechBubbleDiameter);
+
+
   //speechBubbleX*73/100, speechBubbleY*1/2,
 }//end draw
 
@@ -303,7 +325,7 @@ void keyPressed ()
 //
 void mousePressed () 
 {
-  //if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit(); //When we press the button the program will close
+  if (mouseX>displayWidth*1/8-(quitButtonWidth*1/2) || mouseX<displayWidth*1/12+(quitButtonWidth*1/2) || mouseY>leftQuitButtonY-(quitButtonHeight*1/2) || mouseY<leftQuitButtonY+(quitButtonHeight*1/2)) exit(); //When we press the button the program will close
 }//End mousePressed
 //
 //End Main Program 
