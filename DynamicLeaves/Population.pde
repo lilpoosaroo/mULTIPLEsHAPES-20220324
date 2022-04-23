@@ -168,4 +168,58 @@ void population ()
   lilhandRightY1=lilhandLeftY1;
   lilhandRightX2=displayWidth*154/200;
   lilhandRightY2=lilhandLeftY2;
+  
+  
+   //BACK OF BODY
+
+  leftQuitButtonX=displayWidth*1/12;
+  leftQuitButtonY=smallerDisplayDimension*1/4;
+  rightQuitButtonX= displayWidth*1/8;
+  rightQuitButtonY=leftQuitButtonY;
+  quitButtonWidth=eyeDiameter*35/20;
+  quitButtonHeight=eyeDiameter*2;
+
+  //  FIRSTbabyLeafX1=(displayWidth*1/10)+(quitButtonWidth*8/100);
+  FIRSTbabyLeafX1=(displayWidth*1/10)+(quitButtonWidth*8/100);
+  FIRSTbabyLeafY1=(smallerDisplayDimension*1/12)+(quitButtonHeight);
+  FIRSTbabyLeafX2=displayWidth*1/13;
+  FIRSTbabyLeafY2=smallerDisplayDimension*1/6;
+
+  SECONDbabyLeafX1= FIRSTbabyLeafX1;
+  SECONDbabyLeafY1=FIRSTbabyLeafY1;
+  SECONDbabyLeafX2=displayWidth*1/10;
+  SECONDbabyLeafY2=FIRSTbabyLeafY2;
+
+  THIRDbabyLeafX1=FIRSTbabyLeafX1;
+  THIRDbabyLeafY1=FIRSTbabyLeafY1;
+  THIRDbabyLeafX2=displayWidth*1/8;
+  THIRDbabyLeafY2=FIRSTbabyLeafY2;
+
+
+  //FRONT OF BODY
+
+  frontBodyX=leftQuitButtonX+(quitButtonWidth*1/3); 
+  frontBodyY=smallerDisplayDimension*1/2;
+  frontBodyWidth=quitButtonWidth*5/3;
+  frontBodyHeight=quitButtonHeight*105/100;
+
+  babyLeftEyeX=frontBodyX;
+  babyLeftEyeY=frontBodyY-(frontBodyHeight*1/8);
+  babyRightEyeX=frontBodyX+(frontBodyWidth*1/4);
+  babyRightEyeY=babyLeftEyeY;
+  babyEyeDiameter=eyeDiameter*1/4;
+
+
+  smileCirleX=babyRightEyeX*92/100;
+  smileCircleY=babyLeftEyeY*105/100;
+  smileCircleDiameter=babyEyeDiameter;
+
+  smileLineX1=smileCirleX-(babyEyeDiameter*1/2);
+  smileLineY1=smileCircleY-(babyEyeDiameter*40/100);
+  smileLineX2=smileCirleX+(babyEyeDiameter*1/2);
+  smileLineY2=smileLineY1;
+  
+  
+  //Speech Bubble
+  speechFont= createFont("Bahnschrift", 50);
 }//End population
